@@ -4,16 +4,17 @@ using UnityEngine;
 
 namespace CodeBase.Enemy
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class EnemyIntakes : MonoBehaviour, IEnemyIntakes
     {
         private Transform _parent;
 
         private Rigidbody2D _rigidbody;
+        private Collider2D _collider;
 
         private Vector3 _startPoint;
 
-        public Transform Transform => transform;
+        public GameObject GameObject => gameObject;
 
 
         [SerializeField] [Range(0, 1000)] private float mass;
@@ -29,6 +30,7 @@ namespace CodeBase.Enemy
         {
             _parent = transform.parent;
             _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();
         }
 
         public void Move(Vector3 point, float speed)
@@ -43,6 +45,7 @@ namespace CodeBase.Enemy
 
             transform.parent = parent;
             _startPoint = transform.position;
+            _collider.isTrigger = true;
             _rigidbody.bodyType = RigidbodyType2D.Kinematic;
             _moveCenterCoroutine = StartCoroutine(MoveToCenter());
         }
@@ -64,6 +67,7 @@ namespace CodeBase.Enemy
         {
             StopMovingCenter();
 
+            _collider.isTrigger = false;
             transform.SetParent(_parent);
             _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         }

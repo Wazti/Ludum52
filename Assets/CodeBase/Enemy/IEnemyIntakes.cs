@@ -4,7 +4,7 @@ namespace CodeBase.Enemy
 {
     public interface IEnemyIntakes
     {
-        Transform Transform { get; }
+        GameObject GameObject { get; }
         float Mass { get; set; }
 
         void Move(Vector3 point, float speed);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Enemy;
+using CodeBase.Logic;
 using CodeBase.Services.InputService;
 using Unity.Mathematics;
 using UnityEngine;
@@ -33,13 +34,29 @@ namespace CodeBase.Hero
         private Collider2D[] _hits = new Collider2D[50];
 
         private List<IEnemyIntakes> _currentEnemy = new List<IEnemyIntakes>();
+        public event Action ChangeProcessEnemy;
 
+
+        [SerializeField] private HeroCapacity heroCapacity;
+        [SerializeField] private TriggerObserver triggerObserver;
         [SerializeField] private SpriteRenderer lightRenderer;
 
         private void Awake()
         {
             lightRenderer.color = new Color(255, 255, 255, 0);
+            triggerObserver.TriggerEnter += OnEnemyPoint;
             _layerMask = 1 << LayerMask.NameToLayer($"Intakes");
+        }
+
+        private void OnEnemyPoint(Collider2D obj)
+        {
+            if (!obj.gameObject.TryGetComponent<IEnemyIntakes>(out var enemyIntakes)) return;
+
+            if (!_currentEnemy.Contains(enemyIntakes)) return;
+
+            _currentEnemy.Remove(enemyIntakes);
+            heroCapacity.AddEnemy(enemyIntakes);
+            ChangeProcessEnemy?.Invoke();
         }
 
         private void Update()
@@ -61,6 +78,8 @@ namespace CodeBase.Hero
         {
             TickEnemies();
         }
+
+        public List<IEnemyIntakes> GetCurrentProcessEnemies() => _currentEnemy;
 
         private void Intake()
         {
@@ -94,6 +113,8 @@ namespace CodeBase.Hero
                 enemyIntakes.OutEnemy();
                 _currentEnemy.Remove(enemyIntakes);
             }
+
+            ChangeProcessEnemy?.Invoke();
         }
 
         private void AddNewEnemies(List<IEnemyIntakes> last)
@@ -104,13 +125,19 @@ namespace CodeBase.Hero
 
                 _currentEnemy.Add(enemy);
             }
+
+            ChangeProcessEnemy?.Invoke();
         }
 
         private void ClearEnemies()
         {
+            if (_currentEnemy.Count == 0) return;
+
             _currentEnemy.ForEach((enemy) => enemy.OutEnemy());
 
             _currentEnemy.Clear();
+
+            ChangeProcessEnemy?.Invoke();
         }
     }
 }
