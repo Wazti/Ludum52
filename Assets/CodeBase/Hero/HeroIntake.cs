@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CodeBase.Enemy;
 using CodeBase.Logic;
 using CodeBase.Services.InputService;
-using Unity.Mathematics;
+using CodeBase.Unit;
 using UnityEngine;
 using Zenject;
 
@@ -33,8 +32,8 @@ namespace CodeBase.Hero
         private int _layerMask;
         private Collider2D[] _hits = new Collider2D[50];
 
-        private List<IEnemyIntakes> _currentEnemy = new List<IEnemyIntakes>();
-        public event Action ChangeProcessEnemy;
+        private readonly List<IUnitIntakes> _currentUnits = new List<IUnitIntakes>();
+        public event Action ChangeProcessUnit;
 
 
         [SerializeField] private HeroCapacity heroCapacity;
@@ -50,13 +49,13 @@ namespace CodeBase.Hero
 
         private void OnEnemyPoint(Collider2D obj)
         {
-            if (!obj.gameObject.TryGetComponent<IEnemyIntakes>(out var enemyIntakes)) return;
+            if (!obj.gameObject.TryGetComponent<IUnitIntakes>(out var enemyIntakes)) return;
 
-            if (!_currentEnemy.Contains(enemyIntakes)) return;
+            if (!_currentUnits.Contains(enemyIntakes)) return;
 
-            _currentEnemy.Remove(enemyIntakes);
-            heroCapacity.AddEnemy(enemyIntakes);
-            ChangeProcessEnemy?.Invoke();
+            _currentUnits.Remove(enemyIntakes);
+            heroCapacity.AddUnit(enemyIntakes);
+            ChangeProcessUnit?.Invoke();
         }
 
         private void Update()
@@ -67,7 +66,7 @@ namespace CodeBase.Hero
 
             if (!_inputService.IsIntakeButton())
             {
-                ClearEnemies();
+                ClearUnits();
                 return;
             }
 
@@ -79,65 +78,65 @@ namespace CodeBase.Hero
             TickEnemies();
         }
 
-        public List<IEnemyIntakes> GetCurrentProcessEnemies() => _currentEnemy;
+        public List<IUnitIntakes> GetCurrentProcessEnemies() => _currentUnits;
 
         private void Intake()
         {
             Physics2D.OverlapBoxNonAlloc((transform.position + Vector3.up * offsetY), sizeBox, 0, _hits,
                 _layerMask);
 
-            var results = _hits.Where(x => x != null).Select(item => item.transform.GetComponent<IEnemyIntakes>())
+            var results = _hits.Where(x => x != null).Select(item => item.transform.GetComponent<IUnitIntakes>())
                 .ToList();
 
             RemoveOldEnemies(results);
 
-            AddNewEnemies(results);
+            AddNewUnits(results);
 
             _hits = new Collider2D[50];
         }
 
         private void TickEnemies()
         {
-            foreach (IEnemyIntakes enemyIntakes in _currentEnemy)
+            foreach (IUnitIntakes enemyIntakes in _currentUnits)
             {
                 enemyIntakes.Move(pointToIntake.position,
                     (1 / enemyIntakes.Mass) * StrengthEngine * Time.deltaTime);
             }
         }
 
-        private void RemoveOldEnemies(List<IEnemyIntakes> current)
+        private void RemoveOldEnemies(List<IUnitIntakes> current)
         {
-            foreach (IEnemyIntakes enemyIntakes in _currentEnemy.ToList()
+            foreach (IUnitIntakes enemyIntakes in _currentUnits.ToList()
                          .Where(enemyIntakes => !current.Contains(enemyIntakes)))
             {
-                enemyIntakes.OutEnemy();
-                _currentEnemy.Remove(enemyIntakes);
+                enemyIntakes.OutUnit();
+                _currentUnits.Remove(enemyIntakes);
             }
 
-            ChangeProcessEnemy?.Invoke();
+            ChangeProcessUnit?.Invoke();
         }
 
-        private void AddNewEnemies(List<IEnemyIntakes> last)
+        private void AddNewUnits(List<IUnitIntakes> last)
         {
-            foreach (IEnemyIntakes enemy in last.Where(enemy => !_currentEnemy.Contains(enemy)))
+            foreach (IUnitIntakes unit in last.Where(enemy => !_currentUnits.Contains(enemy)))
             {
-                enemy.IntakeEnemy(transform);
+                unit.IntakeUnit(transform);
 
-                _currentEnemy.Add(enemy);
+                _currentUnits.Add(unit);
             }
 
-            ChangeProcessEnemy?.Invoke();
+            ChangeProcessUnit?.Invoke();
         }
 
-        private void ClearEnemies()
+        private void ClearUnits()
         {
-            if (_currentEnemy.Count == 0) return;
+            if (_currentUnits.Count == 0) return;
 
-            _currentEnemy.ForEach((enemy) => enemy.OutEnemy());
+            _currentUnits.ForEach((unit) => unit.OutUnit());
 
-            _currentEnemy.Clear();
+            _currentUnits.Clear();
 
-            ChangeProcessEnemy?.Invoke();
+            ChangeProcessUnit?.Invoke();
         }
     }
 }

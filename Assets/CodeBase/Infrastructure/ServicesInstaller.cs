@@ -17,6 +17,7 @@ namespace CodeBase.Infrastructure
             Container.BindInterfacesAndSelfTo<InputService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<PersistentProgressService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<GameFactory>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<UnitFactory>().AsSingle().NonLazy();
             Container.Bind<ICoroutineRunner>().To<CoroutineRunner>().FromComponentInNewPrefab(coroutineRunner)
                 .AsSingle()
                 .NonLazy();

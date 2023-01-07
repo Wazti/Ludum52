@@ -25,7 +25,7 @@ namespace CodeBase.Hero
         private void Awake()
         {
             heroCapacity.ModifyTakenEnemies += OnCapacityChange;
-            heroIntake.ChangeProcessEnemy += OnProcessChange;
+            heroIntake.ChangeProcessUnit += OnProcessChange;
         }
 
         public void Update()
@@ -48,7 +48,7 @@ namespace CodeBase.Hero
         private void OnDestroy()
         {
             heroCapacity.ModifyTakenEnemies -= OnCapacityChange;
-            heroIntake.ChangeProcessEnemy -= OnProcessChange;
+            heroIntake.ChangeProcessUnit -= OnProcessChange;
         }
 
         private void RecalculateWeight()

@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Enemy
+namespace CodeBase.Unit
 {
-    public interface IEnemyIntakes
+    public interface IUnitIntakes
     {
         GameObject GameObject { get; }
         float Mass { get; set; }
 
         void Move(Vector3 point, float speed);
-        void IntakeEnemy(Transform parent);
-        void OutEnemy();
+        void IntakeUnit(Transform parent);
+        void OutUnit();
     }
 }

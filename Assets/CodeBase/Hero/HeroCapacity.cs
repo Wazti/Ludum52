@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using CodeBase.Enemy;
+using CodeBase.Unit;
 using UnityEngine;
 
 namespace CodeBase.Hero
 {
     public class HeroCapacity : MonoBehaviour
     {
-        private List<EnemyInfo> _currentEnemies = new List<EnemyInfo>();
+        private readonly List<UnitInfo> _currentUnits = new List<UnitInfo>();
 
-        public List<EnemyInfo> CurrentEnemiesTaken
+        public List<UnitInfo> CurrentEnemiesTaken
         {
-            get => _currentEnemies;
+            get => _currentUnits;
         }
 
         public event Action ModifyTakenEnemies;
 
-        public void AddEnemy(IEnemyIntakes enemyIntakes)
+        public void AddUnit(IUnitIntakes unitIntakes)
         {
-            _currentEnemies.Add(new EnemyInfo(enemyIntakes.Mass));
-           
-            Destroy(enemyIntakes.GameObject);
-            
+            _currentUnits.Add(new UnitInfo(unitIntakes.Mass));
+
+            Destroy(unitIntakes.GameObject);
+
             ModifyTakenEnemies?.Invoke();
         }
     }
