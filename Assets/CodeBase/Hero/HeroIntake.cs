@@ -24,6 +24,7 @@ namespace CodeBase.Hero
 
         private Collider2D[] _hits = new Collider2D[50];
 
+        [SerializeField] private Transform viewTransform;
         [SerializeField] private HeroAnimator heroAnimator;
         [SerializeField] private SpriteRenderer lightRenderer;
         [SerializeField] private HeroTickUnits heroTickUnits;
@@ -77,13 +78,14 @@ namespace CodeBase.Hero
 
         private void Intake()
         {
-            Physics2D.OverlapBoxNonAlloc((transform.position + Vector3.up * offsetY), sizeBox, 0, _hits,
+            Physics2D.OverlapBoxNonAlloc((transform.position),
+                new Vector2(sizeBox.x, sizeBox.y * 2),
+                viewTransform.localEulerAngles.z, _hits,
                 _layerMask);
 
             var results = _hits.Where(x => x != null).Select(item => item.transform.GetComponent<IUnitIntakes>())
                 .ToList();
 
-            heroTickUnits.RemoveOldEnemies(results);
 
             heroTickUnits.AddNewUnits(results);
 

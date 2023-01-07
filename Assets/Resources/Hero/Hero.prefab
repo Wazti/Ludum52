@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649023058454535299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7649023059454158416}
-  m_RootOrder: 1
+  m_Father: {fileID: 7649023059947343207}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7649023058454535297
 SpriteRenderer:
@@ -113,7 +113,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7649023059454158416}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7649023058953068398
 GameObject:
@@ -145,7 +145,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7649023059454158416}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &7649023058953068396
 CapsuleCollider2D:
@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7649023059454158424}
   - component: {fileID: 7649023059454158425}
   - component: {fileID: 7649023059454158406}
+  - component: {fileID: 5246260371543245803}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
@@ -203,7 +204,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7649023059947343207}
-  - {fileID: 7649023058454535296}
   - {fileID: 7649023058552797011}
   - {fileID: 7649023058953068399}
   - {fileID: 7649023059683246842}
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetY: -2
   sizeBox: {x: 1, y: 3.4}
+  viewTransform: {fileID: 7649023059947343207}
   heroAnimator: {fileID: 7649023059454158424}
   lightRenderer: {fileID: 7649023058454535297}
   heroTickUnits: {fileID: 7649023059454158406}
@@ -390,6 +391,21 @@ MonoBehaviour:
   heroStats: {fileID: 7649023059454158431}
   heroCapacity: {fileID: 7649023059454158427}
   triggerObserver: {fileID: 7649023059683246840}
+--- !u!114 &5246260371543245803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649023059454158420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef36256e101486cbdf168c4092f0a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewTransform: {fileID: 7649023059947343207}
+  speed: 3
+  maxDefaultAngle: 30
 --- !u!1 &7649023059683246845
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +437,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7649023059454158416}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7649023059683246843
 BoxCollider2D:
@@ -489,7 +505,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7649023058454535296}
   m_Father: {fileID: 7649023059454158416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -16,6 +16,8 @@ namespace CodeBase.Hero
         [SerializeField] private StatType StrengthEngine;
         private float strengthEngine;
 
+
+      
         [SerializeField] private Transform pointToIntake;
         
         [SerializeField] private HeroStatsSystem heroStats;
