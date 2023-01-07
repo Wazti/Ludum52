@@ -6,16 +6,12 @@ namespace CodeBase.Infrastructure
 {
     public class GameBootstrapper : MonoBehaviour
     {
-        private GameStateMachine _gameStateMachine;
+        private IGameStateMachine _gameStateMachine;
         private Game _game;
 
-        private ICoroutineRunner _coroutineRunner;
-
-
         [Inject]
-        public void Construct(ICoroutineRunner coroutineRunner, GameStateMachine gameStateMachine)
+        public void Construct(IGameStateMachine gameStateMachine)
         {
-            _coroutineRunner = coroutineRunner;
             _gameStateMachine = gameStateMachine;
         }
 

@@ -12,7 +12,7 @@ namespace CodeBase.Infrastructure
             Container.Bind<LoadLevelState>().AsSingle().NonLazy();
             Container.Bind<LoadProgressState>().AsSingle().NonLazy();
 
-            Container.Bind<GameStateMachine>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle().NonLazy();
         }
     }
 }
