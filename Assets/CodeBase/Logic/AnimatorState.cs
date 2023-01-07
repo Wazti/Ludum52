@@ -5,5 +5,6 @@
         Idle,
         Walking,
         Fly,
+        Fall,
     }
 }

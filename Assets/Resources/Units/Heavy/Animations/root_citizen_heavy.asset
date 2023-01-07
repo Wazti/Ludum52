@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b935bc3bfd4944ab93c4a574dfd0da, type: 3}
+  m_Name: root_citizen_heavy
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 11400000, guid: 99ebe60066bccb84795ec7dcbc3000ae, type: 2}
+  - {fileID: 11400000, guid: ab01b95b96fa8774d9814d1ca1cde00e, type: 2}
+  - {fileID: 11400000, guid: abecc529cea12be47ada342f6f34ed48, type: 2}
+  - {fileID: 11400000, guid: 92d8686ee9b33c34fa35329ee47bd1d4, type: 2}
+  controlDriver:
+    name: state
+    autoIncrement: 0
+    percentageBased: 0
+    guid: 9b686e1d-6722-45d2-983e-a026d3311391
+  drivers:
+    keys: []
+    values: 

@@ -16,17 +16,18 @@ namespace CodeBase.Unit
         {
             animator.AddListener(AnimatorDrivers.State, StateFor);
         }
-        
+
 
         public void ResetToIdle()
         {
-            SetState(AnimatorState.Fly);
+            SetState(AnimatorState.Idle);
         }
 
         public void SetFlip(bool flip)
         {
             animator.Flip = flip;
         }
+
         public void Walk()
         {
             SetState(AnimatorState.Walking);
@@ -37,10 +38,16 @@ namespace CodeBase.Unit
             SetState(AnimatorState.Fly);
         }
 
+        public void Fall()
+        {
+            SetState(AnimatorState.Fall);
+        }
+
         public void SetState(AnimatorState state)
         {
             animator.Set(AnimatorDrivers.State, (int) state);
         }
+
         private void StateFor()
         {
             var intHash = animator.State.Get(AnimatorDrivers.State);

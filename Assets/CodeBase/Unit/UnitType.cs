@@ -2,6 +2,6 @@
 {
     public enum UnitType
     {
-        Citizen
+        Thin, Medium, Heavy
     }
 }

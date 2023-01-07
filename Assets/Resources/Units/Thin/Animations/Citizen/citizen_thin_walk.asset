@@ -13,51 +13,11 @@ MonoBehaviour:
   m_Name: citizen_thin_walk
   m_EditorClassIdentifier: 
   cels:
-  - sprite: {fileID: -1273619593, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
+  - sprite: {fileID: 1504190393, guid: b642dfd8497c6c245978d3a09b29d8ed, type: 3}
     drivers:
       keys: []
       values: 
-  - sprite: {fileID: -781331160, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: -55094124, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 2032825009, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 607537870, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 755505152, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 32631909, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: -607965232, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: -943997619, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 1189764478, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: -1422227412, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: -156661811, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
+  - sprite: {fileID: 218685896, guid: b642dfd8497c6c245978d3a09b29d8ed, type: 3}
     drivers:
       keys: []
       values: 

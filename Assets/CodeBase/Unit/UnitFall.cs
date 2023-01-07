@@ -21,7 +21,7 @@ namespace CodeBase.Unit
 
         private void OnEnable()
         {
-            unitAnimator.Fly();
+            unitAnimator.Fall();
         }
 
         private void FixedUpdate()

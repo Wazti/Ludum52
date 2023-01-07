@@ -4,7 +4,7 @@ using Zenject;
 
 namespace CodeBase.Infrastructure.Factory
 {
-    public class UnitFactory : IFactory<UnitType, BaseUnit>
+    public class UnitFactory : IFactory<UnitType, BaseUnit>, IUnitFactory
     {
         private readonly IUnitConfigContainer _configContainer;
         private readonly DiContainer _container;

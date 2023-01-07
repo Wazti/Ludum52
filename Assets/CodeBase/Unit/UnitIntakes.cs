@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using CodeBase.Stats.Scriptables;
 using UnityEngine;
 
 namespace CodeBase.Unit
@@ -11,6 +12,9 @@ namespace CodeBase.Unit
         [SerializeField] private UnitFall unitFall;
         [SerializeField] private UnitMove unitMove;
 
+        [SerializeField] private UnitStats unitStats;
+        [SerializeField] private StatType massStat;
+
         private Transform _parent;
         private Rigidbody2D _rigidbody;
 
@@ -19,12 +23,11 @@ namespace CodeBase.Unit
 
         public GameObject GameObject => gameObject;
 
-        [SerializeField] [Range(0, 1000)] private float mass;
+        private float mass;
 
         public float Mass
         {
-            get => mass;
-            set => mass = value;
+            get => unitStats.StatsSystem.GetStat(massStat).Value;
         }
 
         private void Awake()
@@ -32,6 +35,7 @@ namespace CodeBase.Unit
             _parent = transform.parent;
             _rigidbody = GetComponent<Rigidbody2D>();
         }
+
 
         public void Move(Vector3 point, float speed)
         {

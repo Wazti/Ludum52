@@ -10,15 +10,11 @@ namespace CodeBase.Services.InputService
         private const string Boost = "Boost";
 
 
-        public bool IsIntakeButton()
-        {
-            return UnityEngine.Input.GetButton(Intake);
-        }
+        public bool IsIntakeButtonUp() => Input.GetButtonUp(Intake);
 
-        public bool IsBoostButton()
-        {
-            return Input.GetButton(Boost);
-        }
+        public bool IsIntakeButtonDown() => Input.GetButtonDown(Intake);
+
+        public bool IsBoostButton() => Input.GetButton(Boost);
 
         public Vector2 Axis
         {

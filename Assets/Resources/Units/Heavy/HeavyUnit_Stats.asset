@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dcc1ad893f43e484cb7842e5c868d2, type: 3}
+  m_Name: HeavyUnit_Stats
+  m_EditorClassIdentifier: 
+  stats:
+  - statType: {fileID: 11400000, guid: 37b2d2cb9eac986499ec9988d54c9a4a, type: 2}
+    value: 120
+  - statType: {fileID: 11400000, guid: 0e5cd06188f71e946b4c33e125fe15d5, type: 2}
+    value: 0.5

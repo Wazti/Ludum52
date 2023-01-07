@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b935bc3bfd4944ab93c4a574dfd0da, type: 3}
+  m_Name: root_hero
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 11400000, guid: c2ab30ed9eb7f434980fc20c14ae0f4a, type: 2}
+  - {fileID: 11400000, guid: 1917ce2eb9f51094083b57b6cc143306, type: 2}
+  - {fileID: 11400000, guid: 6c0a4fa55b7e11440bcaad6e3f88019c, type: 2}
+  controlDriver:
+    name: state
+    autoIncrement: 0
+    percentageBased: 0
+    guid: 15013e8a-91ac-40fe-8802-a54539ff860a
+  drivers:
+    keys: []
+    values: 

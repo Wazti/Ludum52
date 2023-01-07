@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1890051317484875065}
   - component: {fileID: 3760287379552058309}
   - component: {fileID: 7020226633695058942}
+  - component: {fileID: 1558870887895234369}
   m_Layer: 8
   m_Name: BaseUnit
   m_TagString: Untagged
@@ -91,7 +92,8 @@ MonoBehaviour:
   unitFly: {fileID: 7020226633695058942}
   unitFall: {fileID: 3760287379552058309}
   unitMove: {fileID: 1890051317484875065}
-  mass: 300
+  unitStats: {fileID: 1558870887895234369}
+  massStat: {fileID: 11400000, guid: 37b2d2cb9eac986499ec9988d54c9a4a, type: 2}
 --- !u!114 &7807468329944504795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitAnimator: {fileID: 4933885177663787190}
+  unitStats: {fileID: 1558870887895234369}
   rigidBody: {fileID: 7807468329944504773}
+  distanceToDecision: 3
+  statSpeed: {fileID: 11400000, guid: 0e5cd06188f71e946b4c33e125fe15d5, type: 2}
 --- !u!114 &3760287379552058309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +169,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitAnimator: {fileID: 4933885177663787190}
   _collider: {fileID: 7807468329944504793}
+--- !u!114 &1558870887895234369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807468329944504772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29d20863d144b2c84304d6e669b0ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroStats: {fileID: 0}

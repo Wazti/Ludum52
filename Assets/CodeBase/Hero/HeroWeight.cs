@@ -15,7 +15,7 @@ namespace CodeBase.Hero
         public float StrengthDown;
 
         [SerializeField] private HeroCapacity heroCapacity;
-        [SerializeField] private HeroIntake heroIntake;
+        [SerializeField] private HeroTickUnits heroIntake;
 
 
         [SerializeField] private Rigidbody2D _rigidBody;

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: citizen_thin_idle
   m_EditorClassIdentifier: 
   cels:
-  - sprite: {fileID: -1273619593, guid: 000d3bdc118a53740a6472728fea2063, type: 3}
+  - sprite: {fileID: 667610496, guid: 621ac9e26c9dcd040921b22d9f5f27ba, type: 3}
+    drivers:
+      keys: []
+      values: 
+  - sprite: {fileID: -2050471327, guid: 621ac9e26c9dcd040921b22d9f5f27ba, type: 3}
     drivers:
       keys: []
       values: 

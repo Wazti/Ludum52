@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f1da0b6abdb7d45aa4315eccab639b, type: 3}
+  m_Name: hero_flyout
+  m_EditorClassIdentifier: 
+  cels:
+  - sprite: {fileID: 1029936246, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
+    drivers:
+      keys:
+      - fly
+      values: 00000000
+  - sprite: {fileID: 1739015718, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
+    drivers:
+      keys: []
+      values: 
+  - sprite: {fileID: 398095884, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
+    drivers:
+      keys: []
+      values: 
+  - sprite: {fileID: 399443698, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
+    drivers:
+      keys: []
+      values: 
+  - sprite: {fileID: 399443698, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
+    drivers:
+      keys:
+      - state
+      values: 00000000
+  controlDriver:
+    name: flyout
+    autoIncrement: 1
+    percentageBased: 0
+    guid: 820b9e2c-f7dc-4191-b78d-4a38becd6f4c
+  drivers:
+    keys: []
+    values: 

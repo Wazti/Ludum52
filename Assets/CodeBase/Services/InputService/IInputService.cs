@@ -6,7 +6,10 @@ namespace CodeBase.Services.InputService
     {
         Vector2 Axis { get; }
 
-        bool IsIntakeButton();
+        bool IsIntakeButtonUp();
+
+        bool IsIntakeButtonDown();
+        
         bool IsBoostButton();
     }
 }
