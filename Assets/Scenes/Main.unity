@@ -734,7 +734,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.21875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2244,7 +2244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 60274767081168316, guid: 8b66cae5a74cd34439575192e8575df9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.319
+      value: -3.875
       objectReference: {fileID: 0}
     - target: {fileID: 60274767081168316, guid: 8b66cae5a74cd34439575192e8575df9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2493,6 +2493,10 @@ PrefabInstance:
     - target: {fileID: 5271558685444807454, guid: 96083fd9091402b4d943c8f13b08b2ac, type: 3}
       propertyPath: m_Name
       value: Building_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271558685444807454, guid: 96083fd9091402b4d943c8f13b08b2ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271558685444807455, guid: 96083fd9091402b4d943c8f13b08b2ac, type: 3}
       propertyPath: m_RootOrder
