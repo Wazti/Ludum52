@@ -17,26 +17,29 @@ namespace CodeBase.Hero
     {
         [Inject] private IInputService _inputService;
 
-        [SerializeField] private float offsetY;
-
+        public float CurrentLength;
+        
         [SerializeField] private Vector2 sizeBox;
+
+        [SerializeField] private StatType rangeStat;
+        [SerializeField] private HeroStatsSystem heroStats;
+
         private int _layerMask;
+        private int _groundMask;
 
         private Collider2D[] _hits = new Collider2D[50];
 
         [SerializeField] private Transform viewTransform;
         [SerializeField] private HeroAnimator heroAnimator;
-        [SerializeField] private SpriteRenderer lightRenderer;
         [SerializeField] private HeroTickUnits heroTickUnits;
-
-        private Tween _fadeTween;
+        public event Action ActivateLight, DeactivateLight;
 
         private bool _isActive;
 
         private void Awake()
         {
-            lightRenderer.color = new Color(255, 255, 255, 0);
-            _layerMask = 1 << LayerMask.NameToLayer($"Intakes");
+            _layerMask = 1 << LayerMask.NameToLayer("Intakes");
+            _groundMask = 1 << LayerMask.NameToLayer("Ground");
         }
 
         private void Update()
@@ -66,44 +69,55 @@ namespace CodeBase.Hero
 
             heroAnimator.HideFly();
             heroTickUnits.ClearUnits();
-            HideLightAnimation();
+            DeactivateLight?.Invoke();
         }
 
         private void ActivateIntake()
         {
             _isActive = true;
             heroAnimator.ShowFly();
-            ShowLightAnimation();
+            ActivateLight?.Invoke();
         }
 
         private void Intake()
         {
+            CurrentLength = GetActualRange();
+
             Physics2D.OverlapBoxNonAlloc((transform.position),
-                new Vector2(sizeBox.x, sizeBox.y * 2),
+                new Vector2(sizeBox.x, GetActualRange() * 2),
                 viewTransform.localEulerAngles.z, _hits,
                 _layerMask);
 
             var results = _hits.Where(x => x != null).Select(item => item.transform.GetComponent<IUnitIntakes>())
                 .ToList();
 
-
             heroTickUnits.AddNewUnits(results);
 
             _hits = new Collider2D[50];
         }
 
-        private void ShowLightAnimation()
+        private float GetActualRange()
         {
-            _fadeTween?.Kill();
-            lightRenderer.color = new Color(255, 255, 255, 0);
-            _fadeTween = lightRenderer.DOFade(.5f, 0.5f).SetDelay(0.2f);
+            float angle = viewTransform.localEulerAngles.z - 90;
+
+            var direction = GetDirectionVector2D(angle);
+
+            var hit = Physics2D.Raycast(transform.position, direction, GetRange(),
+                _groundMask);
+
+            if (hit.collider != null) return Vector2.Distance(transform.position, hit.point);
+
+            return GetRange();
         }
 
-        private void HideLightAnimation()
+        private float GetRange()
         {
-            _fadeTween?.Kill();
+            return heroStats.StatsSystem.GetStat(rangeStat).Value;
+        }
 
-            _fadeTween = lightRenderer.DOFade(0, 0.1f);
+        public Vector2 GetDirectionVector2D(float angle)
+        {
+            return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
         }
     }
 }

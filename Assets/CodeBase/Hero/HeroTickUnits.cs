@@ -4,6 +4,7 @@ using System.Linq;
 using CodeBase.Logic;
 using CodeBase.Stats.Scriptables;
 using CodeBase.Unit;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace CodeBase.Hero
@@ -96,5 +97,8 @@ namespace CodeBase.Hero
 
             ChangeProcessUnit?.Invoke();
         }
+        
+        [ShowInInspector] private float CountUnitsIn => _currentUnits.Count;
+        [ShowInInspector] private float TotalWeight => _currentUnits.Aggregate(0f, (acc, x) => acc + x.Mass);
     }
 }

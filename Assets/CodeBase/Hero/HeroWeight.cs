@@ -1,4 +1,5 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace CodeBase.Hero
@@ -6,6 +7,7 @@ namespace CodeBase.Hero
     [RequireComponent(typeof(Rigidbody2D), typeof(HeroCapacity))]
     public class HeroWeight : MonoBehaviour
     {
+        [ProgressBar(0, "MaxWeight", 0.4f, .1f, .3f)]
         public float CurrentWeight = 0f;
 
         public float MaxWeight = 500f;

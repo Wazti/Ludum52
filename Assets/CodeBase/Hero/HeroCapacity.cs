@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CodeBase.Unit;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace CodeBase.Hero
@@ -24,5 +26,8 @@ namespace CodeBase.Hero
 
             ModifyTakenEnemies?.Invoke();
         }
+
+        [ShowInInspector] private float CountUnitsIn => _currentUnits.Count;
+        [ShowInInspector] private float TotalWeight => _currentUnits.Aggregate(0f, (acc, x) => acc + x.Mass);
     }
 }

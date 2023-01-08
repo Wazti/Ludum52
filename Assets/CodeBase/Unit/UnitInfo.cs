@@ -1,5 +1,8 @@
-﻿namespace CodeBase.Unit
+﻿using System;
+
+namespace CodeBase.Unit
 {
+    [Serializable]
     public class UnitInfo
     {
         public float Mass;

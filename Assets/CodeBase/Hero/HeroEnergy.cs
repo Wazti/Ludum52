@@ -1,5 +1,7 @@
 ﻿using System;
 using CodeBase.Stats.Scriptables;
+using Sirenix.OdinInspector;
+using Sirenix.Utilities.Editor;
 using UniRx;
 using UnityEngine;
 
@@ -47,6 +49,7 @@ namespace CodeBase.Hero
             if (!(Energy.Value <= 0f)) return;
 
             _isOutEnergy = true;
+
             heroMovement.enabled = false;
             _rigidbody.gravityScale = 1;
         }
@@ -54,6 +57,13 @@ namespace CodeBase.Hero
         public void DecreaseEnergy(float energy)
         {
             Energy.Value -= energy;
+        }
+
+        [ShowInInspector]
+        [ProgressBar(0, "MaxEnergy", 0.2f, 0.24f, 0.2f)]
+        public float EnergyDebug
+        {
+            get => Energy.Value;
         }
     }
 }
