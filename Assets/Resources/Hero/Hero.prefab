@@ -184,6 +184,8 @@ GameObject:
   - component: {fileID: 7649023059454158425}
   - component: {fileID: 7649023059454158406}
   - component: {fileID: 5246260371543245803}
+  - component: {fileID: 1571354002}
+  - component: {fileID: 1571354003}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
@@ -260,12 +262,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62995bcf79d422d88e8c5a8bde3d4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetY: -2
-  sizeBox: {x: 1, y: 3.4}
+  CurrentLength: 0
+  sizeBox: {x: 1.5, y: 3.5}
+  rangeStat: {fileID: 11400000, guid: 53dae714c0070f641a4f8e0d24fa4458, type: 2}
+  heroStats: {fileID: 7649023059454158431}
   viewTransform: {fileID: 7649023059947343207}
   heroAnimator: {fileID: 7649023059454158424}
-  lightRenderer: {fileID: 7649023058454535297}
   heroTickUnits: {fileID: 7649023059454158406}
+  heroTickBuildings: {fileID: 1571354003}
 --- !u!114 &7649023059454158431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31862949583f4231b99431b63f2e46d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentWeight: 1.5
+  CurrentWeight: 0
   MaxWeight: 400
   deltaWeight: 200
   StrengthDown: 2
@@ -406,6 +410,35 @@ MonoBehaviour:
   viewTransform: {fileID: 7649023059947343207}
   speed: 3
   maxDefaultAngle: 30
+--- !u!114 &1571354002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649023059454158420}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec9c02a2e3842359e4b92ff0b1c568f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeLimitLight: {x: 1, y: 3.5}
+  rangeLight: {fileID: 11400000, guid: 53dae714c0070f641a4f8e0d24fa4458, type: 2}
+  heroStatsSystem: {fileID: 7649023059454158431}
+  lightRender: {fileID: 7649023058454535297}
+  heroIntake: {fileID: 7649023059454158430}
+--- !u!114 &1571354003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649023059454158420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a80477b9b7c4f45a371b878c364c2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7649023059683246845
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +453,7 @@ GameObject:
   m_Layer: 9
   m_Name: AreaTake
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

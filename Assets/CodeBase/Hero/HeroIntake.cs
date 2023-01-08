@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using CodeBase.Logic;
+using CodeBase.Buildings;
 using CodeBase.Services.InputService;
-using CodeBase.Stats.Infrastructure;
 using CodeBase.Stats.Scriptables;
 using CodeBase.Unit;
-using DG.Tweening;
-using NaughtyAttributes;
 using UnityEngine;
 using Zenject;
 
@@ -18,7 +14,7 @@ namespace CodeBase.Hero
         [Inject] private IInputService _inputService;
 
         public float CurrentLength;
-        
+
         [SerializeField] private Vector2 sizeBox;
 
         [SerializeField] private StatType rangeStat;
@@ -26,12 +22,14 @@ namespace CodeBase.Hero
 
         private int _layerMask;
         private int _groundMask;
+        private int _buildingMask;
 
         private Collider2D[] _hits = new Collider2D[50];
 
         [SerializeField] private Transform viewTransform;
         [SerializeField] private HeroAnimator heroAnimator;
         [SerializeField] private HeroTickUnits heroTickUnits;
+        [SerializeField] private HeroTickBuilding heroTickBuildings;
         public event Action ActivateLight, DeactivateLight;
 
         private bool _isActive;
@@ -40,6 +38,7 @@ namespace CodeBase.Hero
         {
             _layerMask = 1 << LayerMask.NameToLayer("Intakes");
             _groundMask = 1 << LayerMask.NameToLayer("Ground");
+            _buildingMask = 1 << LayerMask.NameToLayer("Building");
         }
 
         private void Update()
@@ -66,8 +65,9 @@ namespace CodeBase.Hero
         private void DeActivateIntake()
         {
             _isActive = false;
-
             heroAnimator.HideFly();
+
+            heroTickBuildings.ClearBuildings();
             heroTickUnits.ClearUnits();
             DeactivateLight?.Invoke();
         }
@@ -83,6 +83,28 @@ namespace CodeBase.Hero
         {
             CurrentLength = GetActualRange();
 
+            IntakeBuilding();
+            IntakeUnits();
+        }
+
+        private void IntakeBuilding()
+        {
+            Physics2D.OverlapBoxNonAlloc((transform.position),
+                new Vector2(sizeBox.x, GetActualRange() * 2),
+                viewTransform.localEulerAngles.z, _hits,
+                _buildingMask);
+
+            var results = _hits.Where(x => x != null).Select(item => item.transform.GetComponent<IBuildingIntakes>())
+                .ToList();
+
+            heroTickBuildings.RemoveOldBuilding(results);
+            heroTickBuildings.AddNewBuildings(results);
+
+            _hits = new Collider2D[50];
+        }
+
+        private void IntakeUnits()
+        {
             Physics2D.OverlapBoxNonAlloc((transform.position),
                 new Vector2(sizeBox.x, GetActualRange() * 2),
                 viewTransform.localEulerAngles.z, _hits,
