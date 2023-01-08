@@ -2613,11 +2613,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2285000411500922640, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 2285000411500922641, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1571353990}
-    m_RemovedComponents: []
+    - target: {fileID: 2285000412236099660, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_CameraDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285000413288832521, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: orthographic size
+      value: 4.21875
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2285000413288832756, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
 --- !u!1001 &3487060403928554590
 PrefabInstance:

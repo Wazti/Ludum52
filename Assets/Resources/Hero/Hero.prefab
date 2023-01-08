@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7649023058454535296}
   - component: {fileID: 7649023058454535297}
+  - component: {fileID: 532898202}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -84,6 +85,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &532898202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649023058454535299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -868314560
+      Data2: 1274224375
+      Data3: -1112405884
+      Data4: 1233496826
+    Path: event:/SFX_UFO_Suck
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Suck
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7649023058552797010
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +461,7 @@ MonoBehaviour:
   heroStatsSystem: {fileID: 7649023059454158431}
   lightRender: {fileID: 7649023058454535297}
   heroIntake: {fileID: 7649023059454158430}
+  fmodEvent: {fileID: 532898202}
 --- !u!1 &7649023059683246845
 GameObject:
   m_ObjectHideFlags: 0

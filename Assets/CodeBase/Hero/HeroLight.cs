@@ -1,6 +1,7 @@
 ﻿using System;
 using CodeBase.Stats.Scriptables;
 using DG.Tweening;
+using FMOD.Studio;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,8 +9,7 @@ namespace CodeBase.Hero
 {
     public class HeroLight : MonoBehaviour
     {
-        [MinMaxSlider(.75f, 3.5f, true)]
-        [SerializeField]
+        [MinMaxSlider(.75f, 3.5f, true)] [SerializeField]
         private Vector2 rangeLimitLight;
 
         [SerializeField] private StatType rangeLight;
@@ -21,7 +21,12 @@ namespace CodeBase.Hero
 
         private static readonly int Fade = Shader.PropertyToID("_Fade");
 
+        [SerializeField] private FMODUnity.StudioEventEmitter fmodEvent;
+
         private Tween _fadeTween;
+        private Tween _soundTween;
+
+        private EventInstance instance;
 
         private void Awake()
         {
@@ -31,6 +36,7 @@ namespace CodeBase.Hero
 
         private void Start()
         {
+            fmodEvent.Play();
             lightRender.color = new Color(255, 255, 255, 0);
         }
 
@@ -59,23 +65,38 @@ namespace CodeBase.Hero
             if (length > rangeLimitLight.y) return 1;
 
             return 0.2f + ((length - rangeLimitLight.x) /
-                             (rangeLimitLight.y - rangeLimitLight.x)) * 0.8f;
+                           (rangeLimitLight.y - rangeLimitLight.x)) * 0.8f;
         }
 
         private void ShowLightAnimation()
         {
             _fadeTween?.Kill();
 
+            _soundTween?.Kill();
+
             lightRender.color = new Color(255, 255, 255, 0);
+
+            fmodEvent.EventInstance.getParameterByName("Suck", out var currentParam);
+
+            _soundTween = DOVirtual.Float(currentParam, 1f, .4f,
+                (v) => { fmodEvent.SetParameter("Suck", v); });
+
             _fadeTween = lightRender.DOFade(.5f, 0.3f).SetDelay(0.1f);
         }
 
         private void HideLightAnimation()
         {
             _fadeTween?.Kill();
+            _soundTween?.Kill();
 
             _fadeTween = lightRender.DOFade(0, 0.1f);
+
+            fmodEvent.EventInstance.getParameterByName("Suck", out var currentParam);
+
+            _soundTween = DOVirtual.Float(currentParam, 0f, .1f,
+                (v) => { fmodEvent.SetParameter("Suck", v); });
         }
+
 
         [ShowInInspector]
         [ProgressBar(0f, 100f, 0.1f, .3f, .4f)]
