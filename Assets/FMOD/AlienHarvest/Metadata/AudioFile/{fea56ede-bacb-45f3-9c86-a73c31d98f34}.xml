@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{fea56ede-bacb-45f3-9c86-a73c31d98f34}">
 		<property name="assetPath">
-			<value>SFX/SFX_Ambience_City.wav</value>
+			<value>AMB/AMB_City.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
