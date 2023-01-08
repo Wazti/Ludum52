@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Services;
 using CodeBase.Unit;
 using NaughtyAttributes;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace CodeBase.Logic
         [SerializeField] private int maxUnits;
         
 
-        [Inject] private IUnitFactory _unitFactory;
+        [Inject] private IUnitPoolingService _unitPoolingService;
 
         private void Awake()
         {
@@ -42,7 +43,7 @@ namespace CodeBase.Logic
         {
             var unitType = unitTypes[Random.Range(0, unitTypes.Count)];
 
-            var prefab = _unitFactory.Create(unitType);
+            var prefab = _unitPoolingService.SpawnUnit(unitType);
 
             prefab.transform.position = new Vector3(Random.Range(-distanceSpawn, distanceSpawn), transform.position.y, 0);
         }

@@ -249,7 +249,7 @@ MonoBehaviour:
   heroWeight: {fileID: 7649023059454158426}
   HorizontalSpeed: 5.5
   UpSpeed: 3
-  DownSpeed: {x: 0.44476357, y: 1.4311336}
+  DownSpeed: {x: 1.09, y: 1.4}
   pointGround: -3.874
   pointSky: 5
 --- !u!114 &7649023059454158430
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWeight: 0
-  deltaWeight: 600
+  deltaWeight: 1500
   StrengthDown: 1.6
   heroCapacity: {fileID: 7649023059454158427}
   heroIntake: {fileID: 7649023059454158406}

@@ -1,5 +1,6 @@
 ﻿using System;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Services;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -8,34 +9,14 @@ namespace CodeBase.Buildings
 {
     public class BuildingSpawner : MonoBehaviour
     {
-        [Inject] private IUnitFactory _unitFactory;
+        [Inject] private IUnitPoolingService _unitPoolingService;
 
-        [SerializeField] private float CoolDownToSpawn;
-
-        private float _coolDown;
-
-        [ShowInInspector]
-        [ProgressBar(0, "CoolDownToSpawn", 0.1f, 1f, 0.2f)]
-        private float CoolDown
-        {
-            get => _coolDown;
-
-            set
-            {
-                if (value <= 0)
-                {
-                    _coolDown = 0;
-                    return;
-                }
-
-                _coolDown = value;
-            }
-        }
 
         [SerializeField] private BuildingWindows buildingWindows;
         [SerializeField] private BuildingContainer buildingContainer;
+        [SerializeField] private BuildingStrengthSpawn buildingStrength;
 
-        [ShowInInspector] private bool IsReady => CoolDown <= 0;
+        [ShowInInspector] private bool IsReady => buildingStrength && buildingStrength.CoolDown <= 0;
 
         [ShowInInspector] private bool IsNeed => buildingWindows.activeWindows.Count > 0;
 
@@ -43,8 +24,6 @@ namespace CodeBase.Buildings
 
         private void FixedUpdate()
         {
-            CoolDown -= Time.deltaTime;
-
             if (!IsReady || !IsNeed || !IsLessUnits) return;
 
             SpawnEnemy();
@@ -52,11 +31,11 @@ namespace CodeBase.Buildings
 
         private void SpawnEnemy()
         {
-            CoolDown = CoolDownToSpawn;
+            buildingStrength.ResetCoolDown();
 
             var type = buildingContainer.GetRandomUnit();
 
-            var unit = _unitFactory.Create(type);
+            var unit = _unitPoolingService.SpawnUnit(type);
 
             var pos = buildingWindows.GetRandomWindow().GetPosition();
 

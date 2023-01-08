@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 3599917956843222933, guid: 427b01f343afa5e4c90e05ee37af93db, type: 3}
   name: Heavy Unit
   stats: {fileID: 11400000, guid: 3d86fadfe20a58f44810a26a9845c2e8, type: 2}
+  unitType: 2
