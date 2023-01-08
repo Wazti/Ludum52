@@ -22,23 +22,6 @@ public class MeshGenerator : MonoBehaviour {
         var rMidBot = new Vector2(rTop.x, rBot.y);
         
         var vertices = new Vector3[6];
-        
-        /*vertices[0] = new Vector3(-width, -height);
-        vertices[1] = new Vector3(-width, height);
-        vertices[2] = new Vector3(width, height);
-        vertices[3] = new Vector3(width, -height);*/
-        
-        /*//Left Bottom
-        vertices[0] = new Vector3(lBot.x, lBot.y, z);
-        
-        //Left Top
-        vertices[1] = new Vector3(lTop.x, lTop.y, z);
-        
-        //Right Top
-        vertices[2] = new Vector3(rTop.x, rTop.y, z);
-        
-        //Right Bottom
-        vertices[3] = new Vector3(rBot.x, rBot.y, z);*/
 
         var localLTop = transform.InverseTransformPoint(lTop);
         var localLBot = transform.InverseTransformPoint(lBot);
