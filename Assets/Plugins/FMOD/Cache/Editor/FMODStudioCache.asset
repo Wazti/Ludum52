@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7900574156974575841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX_Intake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX_Intake
+  Guid:
+    Data1: -1489845474
+    Data2: 1228614864
+    Data3: 137215109
+    Data4: -1743607298
+  Banks:
+  - {fileID: -6154954198352428976}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1648865764738688782}
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7397626155012687356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23,6 +51,26 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &-6154954198352428976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638088091541317230
+  FileSizes:
+  - Name: Desktop
+    Value: 476384
   Exists: 1
 --- !u!114 &-5011739294705989053
 MonoBehaviour:
@@ -72,6 +120,81 @@ MonoBehaviour:
   - Name: Desktop
     Value: 996224
   Exists: 1
+--- !u!114 &-3937941598922156105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX_UFO_Suck
+  m_EditorClassIdentifier: 
+  Path: event:/SFX_UFO_Suck
+  Guid:
+    Data1: -868314560
+    Data2: 1274224375
+    Data3: -1112405884
+    Data4: 1233496826
+  Banks:
+  - {fileID: -6154954198352428976}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2750585600523892802}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3685209625999577678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638088091541297269
+  FileSizes:
+  - Name: Desktop
+    Value: 1114
+  Exists: 1
+--- !u!114 &-618466241870996405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB_City
+  m_EditorClassIdentifier: 
+  Path: event:/AMB_City
+  Guid:
+    Data1: -1409500231
+    Data2: 1124463475
+    Data3: 784472463
+    Data4: 428388002
+  Banks:
+  - {fileID: 2706697229602411377}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,19 +208,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2059012845168959274}
-  - {fileID: 6638679657128688533}
-  - {fileID: 4604225125384162791}
-  - {fileID: -4680685688808096605}
+  - {fileID: -3685209625999577678}
+  - {fileID: 2706697229602411377}
+  - {fileID: 2606714161739162785}
+  - {fileID: -6154954198352428976}
   EditorEvents:
-  - {fileID: 627293774199496512}
-  - {fileID: -5011739294705989053}
+  - {fileID: -618466241870996405}
+  - {fileID: -7900574156974575841}
+  - {fileID: -3937941598922156105}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6638679657128688533}
+  - {fileID: 2606714161739162785}
   StringsBanks:
-  - {fileID: 2059012845168959274}
-  cacheTime: 638088038560439364
+  - {fileID: -3685209625999577678}
+  cacheTime: 638088091541317230
   cacheVersion: 131601
 --- !u!114 &627293774199496512
 MonoBehaviour:
@@ -126,6 +250,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1648865764738688782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_Intake/Progress
+  m_EditorClassIdentifier: 
+  Name: Progress
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2644900121
+    data2: 1661603376
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2059012845168959274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +293,70 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1016
+  Exists: 1
+--- !u!114 &2606714161739162785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638088038560429360
+  FileSizes:
+  - Name: Desktop
+    Value: 394974
+  Exists: 1
+--- !u!114 &2706697229602411377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/AMB.bank
+  Name: AMB
+  StudioPath: bank:/AMB
+  lastModified: 638088038560409339
+  FileSizes:
+  - Name: Desktop
+    Value: 996224
+  Exists: 1
+--- !u!114 &2750585600523892802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_UFO_Suck/Suck
+  m_EditorClassIdentifier: 
+  Name: Suck
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1746039933
+    data2: 2349554010
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &4604225125384162791
 MonoBehaviour:
