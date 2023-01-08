@@ -11,7 +11,7 @@ namespace CodeBase.Hero.Beam
         {
             get
             {
-                return _middleAngle - _castAngle;
+                return _middleAngle - _castAngle + UfoRotation;
             }
         }
 
@@ -19,7 +19,7 @@ namespace CodeBase.Hero.Beam
         {
             get
             {
-                return _middleAngle + _castAngle;
+                return _middleAngle + _castAngle + UfoRotation;
             }
         }
         public float CastAngle => _castAngle;
@@ -51,11 +51,16 @@ namespace CodeBase.Hero.Beam
                 return _startPoint.position;
             }
         }
+
+        public float UfoRotation => _ufo.eulerAngles.z;
+        
         public LayerMask CastMask => _castMask;
+        
         
         
         [SerializeField] private float _startRange = 0.25f;
         [SerializeField] private Transform _startPoint;
+        [SerializeField] private Transform _ufo;
         [Header("")]
         [SerializeField] private LayerMask _castMask;
         [Range(0, 360f)]
