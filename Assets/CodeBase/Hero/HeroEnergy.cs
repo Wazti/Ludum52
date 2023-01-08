@@ -1,7 +1,6 @@
 ﻿using System;
 using CodeBase.Stats.Scriptables;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities.Editor;
 using UniRx;
 using UnityEngine;
 
