@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{afbda890-7ce3-4bb4-9a86-2d97d37b5fcb}">
+	<object class="AudioFile" id="{fea56ede-bacb-45f3-9c86-a73c31d98f34}">
 		<property name="assetPath">
-			<value>SFX/IRs/IR_City30m.wav</value>
+			<value>SFX/SFX_Ambience_City.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.8714374999999999</value>
+			<value>20</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a6315eae-30f5-45c5-9542-cbc51a5ae25e}</destination>
