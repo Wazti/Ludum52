@@ -10,6 +10,14 @@ namespace CodeBase.Buildings
     {
         public List<BuildingIntake> activeWindows = new List<BuildingIntake>();
 
+        [SerializeField] private BuildingTint buildingTint;
+
+        private bool IsZone => buildingTint.IsActive;
+
+        public bool IsActive => activeWindows.Count > 0 && IsZone;
+
+        public event Action ActiveWindowChange;
+
         private void Awake()
         {
             GetComponentsInChildren<BuildingIntake>().ForEach((item) =>
@@ -23,6 +31,7 @@ namespace CodeBase.Buildings
         {
             if (!activeWindows.Contains(window)) return;
 
+            ActiveWindowChange?.Invoke();
             activeWindows.Remove(window);
         }
 
@@ -31,10 +40,9 @@ namespace CodeBase.Buildings
             if (activeWindows.Contains(window)) return;
 
             activeWindows.Add(window);
+            ActiveWindowChange?.Invoke();
         }
 
         public BuildingIntake GetRandomWindow() => activeWindows[Random.Range(0, activeWindows.Count)];
-
-        public bool IsActive => activeWindows.Count > 0;
     }
 }

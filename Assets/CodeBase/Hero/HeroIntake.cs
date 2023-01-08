@@ -23,22 +23,29 @@ namespace CodeBase.Hero
         private int _layerMask;
         private int _groundMask;
         private int _buildingMask;
+        private int _buildingZoneMask;
 
         private Collider2D[] _hits = new Collider2D[50];
 
         [SerializeField] private Transform viewTransform;
         [SerializeField] private HeroAnimator heroAnimator;
         [SerializeField] private HeroTickUnits heroTickUnits;
-        [SerializeField] private HeroTickBuilding heroTickBuildings;
+        private HeroTickBuilding heroTickBuildings;
+        private HeroTickBuilding heroTintBuildings;
+
         public event Action ActivateLight, DeactivateLight;
 
         private bool _isActive;
 
         private void Awake()
         {
+            heroTintBuildings = new HeroTickBuilding();
+            heroTickBuildings = new HeroTickBuilding();
+
             _layerMask = 1 << LayerMask.NameToLayer("Intakes");
             _groundMask = 1 << LayerMask.NameToLayer("Ground");
             _buildingMask = 1 << LayerMask.NameToLayer("Building");
+            _buildingZoneMask = 1 << LayerMask.NameToLayer("BuildingZone");
         }
 
         private void Update()
@@ -57,6 +64,8 @@ namespace CodeBase.Hero
 
         private void FixedUpdate()
         {
+            IntakeBuildingTint();
+
             if (!_isActive) return;
 
             Intake();
@@ -86,6 +95,24 @@ namespace CodeBase.Hero
             IntakeBuilding();
             IntakeUnits();
         }
+
+        private void IntakeBuildingTint()
+        {
+            Physics2D.OverlapBoxNonAlloc((transform.position),
+                new Vector2(sizeBox.x, GetActualRange() * 2),
+                viewTransform.localEulerAngles.z, _hits,
+                _buildingZoneMask);
+
+            var results = _hits.Where(x => x != null && x.transform.position.y < transform.position.y)
+                .Select(item => item.transform.GetComponent<IBuildingIntakes>())
+                .ToList();
+
+            heroTintBuildings.RemoveOldBuilding(results);
+            heroTintBuildings.AddNewBuildings(results);
+
+            _hits = new Collider2D[50];
+        }
+
 
         private void IntakeBuilding()
         {

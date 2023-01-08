@@ -185,7 +185,6 @@ GameObject:
   - component: {fileID: 7649023059454158406}
   - component: {fileID: 5246260371543245803}
   - component: {fileID: 1571354002}
-  - component: {fileID: 1571354003}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
@@ -229,7 +228,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -271,7 +270,6 @@ MonoBehaviour:
   viewTransform: {fileID: 7649023059947343207}
   heroAnimator: {fileID: 7649023059454158424}
   heroTickUnits: {fileID: 7649023059454158406}
-  heroTickBuildings: {fileID: 1571354003}
 --- !u!114 &7649023059454158431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,18 +428,6 @@ MonoBehaviour:
   heroStatsSystem: {fileID: 7649023059454158431}
   lightRender: {fileID: 7649023058454535297}
   heroIntake: {fileID: 7649023059454158430}
---- !u!114 &1571354003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7649023059454158420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a80477b9b7c4f45a371b878c364c2b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7649023059683246845
 GameObject:
   m_ObjectHideFlags: 0
