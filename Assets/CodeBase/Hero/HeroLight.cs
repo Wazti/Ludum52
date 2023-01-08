@@ -67,7 +67,7 @@ namespace CodeBase.Hero
             _fadeTween?.Kill();
 
             lightRender.color = new Color(255, 255, 255, 0);
-            _fadeTween = lightRender.DOFade(.5f, 0.5f).SetDelay(0.2f);
+            _fadeTween = lightRender.DOFade(.5f, 0.3f).SetDelay(0.1f);
         }
 
         private void HideLightAnimation()

@@ -18,7 +18,7 @@ namespace CodeBase.Buildings
 
         [ShowInInspector] private bool IsReady => buildingStrength && buildingStrength.CoolDown <= 0;
 
-        [ShowInInspector] private bool IsNeed => buildingWindows.activeWindows.Count > 0;
+        [ShowInInspector] private bool IsNeed => buildingWindows.IsActive;
 
         [ShowInInspector] private bool IsLessUnits => buildingContainer.IsContainUnits;
 

@@ -16,6 +16,8 @@ namespace CodeBase.Buildings
 
         [SerializeField] private List<UnitType> _generatedUnits = new List<UnitType>();
 
+        public event Action UnitChange;
+
         [ShowInInspector]
         [ProgressBar(0, "_maxUnits", 1f, 0f, 0f)]
         private int LessUnits
@@ -46,11 +48,15 @@ namespace CodeBase.Buildings
 
         public bool IsContainUnits => LessUnits > 0;
 
+        public float Percentage => (float) LessUnits / _maxUnits;
+
         public UnitType GetRandomUnit()
         {
             var item = _generatedUnits[Random.Range(0, _generatedUnits.Count)];
 
             _generatedUnits.Remove(item);
+
+            UnitChange?.Invoke();
 
             return item;
         }

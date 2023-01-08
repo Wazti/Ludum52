@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Buildings;
-using UnityEngine;
 
 namespace CodeBase.Hero
 {
-    public class HeroTickBuilding : MonoBehaviour
+    public class HeroTickBuilding
     {
-        private readonly List<IBuildingIntakes> _currentBuildings = new List<IBuildingIntakes>();
+        public HeroTickBuilding()
+        {
+            _currentBuildings = new List<IBuildingIntakes>();
+        }
+
+        private readonly List<IBuildingIntakes> _currentBuildings;
 
         public List<IBuildingIntakes> GetCurrentProcessBuildings() => _currentBuildings;
 

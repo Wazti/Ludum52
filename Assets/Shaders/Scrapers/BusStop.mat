@@ -65,8 +65,8 @@ Material:
     m_Floats:
     - CORNERS: 1
     - _EnableExternalAlpha: 0
-    - _Fade: 0
-    - _Outline: 1
+    - _Fade: 1
+    - _Outline: 0
     - _OutlineThickness: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

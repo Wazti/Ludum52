@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CodeBase.Camera
+namespace CodeBase.CameraLogic
 {
     [ExecuteInEditMode]
     public class ParallaxBackground : MonoBehaviour
@@ -35,6 +35,7 @@ namespace CodeBase.Camera
 
         void Move(float delta)
         {
+            transform.position = new Vector3(parallaxCamera.transform.position.x, transform.position.y, 0);
             foreach (ParallaxLayer layer in parallaxLayers)
             {
                 layer.Move(delta);
