@@ -28,6 +28,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7408866598112564108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/AMB_City
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/AMB_City
+  Guid:
+    Data1: -1409500231
+    Data2: 1124463475
+    Data3: 784472463
+    Data4: 428388002
+  Banks:
+  - {fileID: 41452081737868803}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7397626155012687356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +79,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6222580457078766179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SFX_Human_Intake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Human_Intake
+  Guid:
+    Data1: -887018194
+    Data2: 1173898325
+    Data3: -1676273254
+    Data4: -696297364
+  Banks:
+  - {fileID: 3334635610107972948}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 703095985997782685}
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6154954198352428976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +223,50 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1114
   Exists: 1
+--- !u!114 &-1079510344439197908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_UFO_Suck/Suck
+  m_EditorClassIdentifier: 
+  Name: Suck
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1746039933
+    data2: 2349554010
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-950760824925527933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638088179536142414
+  FileSizes:
+  - Name: Desktop
+    Value: 1260
+  Exists: 1
 --- !u!114 &-618466241870996405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,21 +307,43 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3685209625999577678}
-  - {fileID: 2706697229602411377}
-  - {fileID: 2606714161739162785}
-  - {fileID: -6154954198352428976}
+  - {fileID: -950760824925527933}
+  - {fileID: 41452081737868803}
+  - {fileID: 5755241609180920262}
+  - {fileID: 3334635610107972948}
   EditorEvents:
-  - {fileID: -618466241870996405}
-  - {fileID: -7900574156974575841}
-  - {fileID: -3937941598922156105}
+  - {fileID: 8961199322052764350}
+  - {fileID: -7408866598112564108}
+  - {fileID: 7955699761561987586}
+  - {fileID: 5611883559535152126}
+  - {fileID: -6222580457078766179}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2606714161739162785}
+  - {fileID: 5755241609180920262}
   StringsBanks:
-  - {fileID: -3685209625999577678}
-  cacheTime: 638088091541317230
+  - {fileID: -950760824925527933}
+  cacheTime: 638088179536407984
   cacheVersion: 131601
+--- !u!114 &41452081737868803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/AMB.bank
+  Name: AMB
+  StudioPath: bank:/AMB
+  lastModified: 638088179536012737
+  FileSizes:
+  - Name: Desktop
+    Value: 2136960
+  Exists: 1
 --- !u!114 &627293774199496512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +371,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &703095985997782685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_Human_Intake/Intake
+  m_EditorClassIdentifier: 
+  Name: Intake
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2644900121
+    data2: 1661603376
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1648865764738688782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +411,30 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 2644900121
+    data2: 1661603376
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1703357281235216266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_Building_Intake/Intake
+  m_EditorClassIdentifier: 
+  Name: Intake
+  StudioPath: 
+  Min: 0
+  Max: 2
   Default: 0
   ID:
     data1: 2644900121
@@ -358,6 +527,26 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3334635610107972948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638088179536407984
+  FileSizes:
+  - Name: Desktop
+    Value: 518400
+  Exists: 1
 --- !u!114 &4604225125384162791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +566,78 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 4256
+  Exists: 1
+--- !u!114 &4812651112334744966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/AMB_CrowdScream/Fade
+  m_EditorClassIdentifier: 
+  Name: Fade
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2404065918
+    data2: 2894979915
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5611883559535152126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SFX_Building_Intake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Building_Intake
+  Guid:
+    Data1: -2128834846
+    Data2: 1228459531
+    Data3: -718826857
+    Data4: 4055094
+  Banks:
+  - {fileID: 3334635610107972948}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1703357281235216266}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5755241609180920262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638088179536122458
+  FileSizes:
+  - Name: Desktop
+    Value: 394974
   Exists: 1
 --- !u!114 &6638679657128688533
 MonoBehaviour:
@@ -398,3 +659,59 @@ MonoBehaviour:
   - Name: Desktop
     Value: 394974
   Exists: 1
+--- !u!114 &7955699761561987586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SFX_UFO_Suck
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_UFO_Suck
+  Guid:
+    Data1: -868314560
+    Data2: 1274224375
+    Data3: -1112405884
+    Data4: 1233496826
+  Banks:
+  - {fileID: 3334635610107972948}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1079510344439197908}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8961199322052764350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/AMB_CrowdScream
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/AMB_CrowdScream
+  Guid:
+    Data1: 34092174
+    Data2: 1306423150
+    Data3: 1568284078
+    Data4: -2108281341
+  Banks:
+  - {fileID: 41452081737868803}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4812651112334744966}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

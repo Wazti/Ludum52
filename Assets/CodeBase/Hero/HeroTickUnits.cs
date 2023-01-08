@@ -30,6 +30,8 @@ namespace CodeBase.Hero
             if (!obj.gameObject.TryGetComponent<IUnitIntakes>(out var enemyIntakes)) return;
 
             if (!_currentUnits.Contains(enemyIntakes)) return;
+            
+            enemyIntakes.OnEndMove();
 
             _currentUnits.Remove(enemyIntakes);
             heroCapacity.AddUnit(enemyIntakes);

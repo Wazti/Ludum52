@@ -104,7 +104,7 @@ MonoBehaviour:
       Data2: 1274224375
       Data3: -1112405884
       Data4: 1233496826
-    Path: event:/SFX_UFO_Suck
+    Path: event:/SFX/SFX_UFO_Suck
   Event: 
   PlayEvent: 0
   StopEvent: 0

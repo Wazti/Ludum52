@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using CodeBase.Stats.Scriptables;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace CodeBase.Unit
     [RequireComponent(typeof(Rigidbody2D))]
     public class UnitIntakes : MonoBehaviour, IUnitIntakes
     {
-        private const string _progressFMODEvent = "Progress";
+        private const string _progressFMODEvent = "Intake";
 
         [SerializeField] private UnitFly unitFly;
         [SerializeField] private UnitFall unitFall;
@@ -48,12 +49,36 @@ namespace CodeBase.Unit
 
         public void Move(Vector3 point, float speed)
         {
-            fmodEmitter.SetParameter(_progressFMODEvent,
-                1 - (Math.Min(Vector2.Distance(point, transform.position), 4f) / 4f));
+            var t =
+                1 - (Math.Min(Vector2.Distance(point, transform.position), 4f) / 4f);
+            
+            fmodEmitter.SetParameter(_progressFMODEvent, t);
 
             transform.Translate(new Vector3(0,
                 point.y - transform.position.y, 0) * speed);
         }
+
+        public void OnEndMove()
+        {
+            StartCoroutine(FadeOutSound());
+        }
+
+        private IEnumerator FadeOutSound()
+        {
+            var curLerpTime = 0f;
+            var timer = 1f;
+            var t = 0f;
+
+            while (t < 1)
+            {
+                curLerpTime += Time.deltaTime;
+                t = curLerpTime / timer;
+                var value = Mathf.Lerp(1, 2, t);
+                fmodEmitter.SetParameter(_progressFMODEvent, value);
+
+                yield return null;
+            }
+        }   
 
         public void IntakeUnit(Transform parent)
         {

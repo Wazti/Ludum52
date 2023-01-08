@@ -47,11 +47,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1489845474
-      Data2: 1228614864
-      Data3: 137215109
-      Data4: -1743607298
-    Path: event:/SFX_Intake
+      Data1: -887018194
+      Data2: 1173898325
+      Data3: -1676273254
+      Data4: -696297364
+    Path: event:/SFX/SFX_Human_Intake
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -59,10 +59,10 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params:
-  - Name: Progress
+  - Name: Intake
     Value: 0
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
+  OverrideMinDistance: 1
   OverrideMaxDistance: 20
 --- !u!1 &7807468329944504772
 GameObject:
