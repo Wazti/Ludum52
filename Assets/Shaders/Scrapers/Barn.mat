@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VerticalMask
+  m_Name: Barn
   m_Shader: {fileID: -6465566751694194690, guid: 9d9d63840dd1ccf49b877130f430b3d9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -62,10 +62,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - CORNERS: 0
     - _EnableExternalAlpha: 0
     - _Fade: 0
+    - _Outline: 1
+    - _OutlineThickness: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
