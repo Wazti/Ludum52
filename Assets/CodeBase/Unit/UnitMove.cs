@@ -9,6 +9,8 @@ namespace CodeBase.Unit
     [RequireComponent(typeof(Rigidbody2D))]
     public class UnitMove : MonoBehaviour, IWalkableUnit
     {
+        [SerializeField] private BaseUnit baseUnit;
+
         [SerializeField] private UnitAnimator unitAnimator;
         [SerializeField] private UnitStats unitStats;
 
@@ -50,7 +52,9 @@ namespace CodeBase.Unit
 
         private void GenerateDistance()
         {
-            _distanceLeft = Random.Range(-distanceToDecision, distanceToDecision);
+            var point = Random.Range(baseUnit.BorderPositions.x, baseUnit.BorderPositions.y);
+
+            _distanceLeft = point - transform.position.x;
 
             _isBack = _distanceLeft < 0;
         }

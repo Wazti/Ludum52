@@ -178,6 +178,7 @@ MonoBehaviour:
   unitFly: {fileID: 7020226633695058942}
   _collider: {fileID: 7807468329944504793}
   _rigidbody2D: {fileID: 7807468329944504773}
+  BorderPositions: {x: 0, y: 0}
 --- !u!114 &4933885177663787190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a4098f05d04f2db605868b183a9084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseUnit: {fileID: 7807468329944504795}
   unitAnimator: {fileID: 4933885177663787190}
   unitStats: {fileID: 1558870887895234369}
   rigidBody: {fileID: 7807468329944504773}

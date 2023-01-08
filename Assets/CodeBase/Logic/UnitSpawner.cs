@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Sections;
 using CodeBase.Services;
 using CodeBase.Unit;
 using NaughtyAttributes;
@@ -13,6 +14,8 @@ namespace CodeBase.Logic
 {
     public class UnitSpawner : MonoBehaviour
     {
+        [SerializeField] private SectionDynamic sectionParent;
+
         [SerializeField] private List<UnitType> unitTypes;
 
         [SerializeField] private float distanceSpawn;
@@ -70,10 +73,17 @@ namespace CodeBase.Logic
             var prefab = _unitPoolingService.SpawnUnit(unitType);
 
             prefab.transform.position =
-                new Vector3(Random.Range(-distanceSpawn / 2, distanceSpawn / 2), transform.position.y, 0);
+                new Vector3(transform.position.x + Random.Range(-distanceSpawn / 2, distanceSpawn / 2),
+                    transform.position.y, 0);
 
             prefab.transform.SetParent(transform);
+
+            var point = sectionParent.transform.position.x;
+
+            prefab.SetBorderValues(
+                new Vector2(point - sectionParent.LengthSection / 2, point + sectionParent.LengthSection / 2));
         }
+        
 
         private void OnDrawGizmos()
         {

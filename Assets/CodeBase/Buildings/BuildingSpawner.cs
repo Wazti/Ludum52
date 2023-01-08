@@ -1,5 +1,6 @@
 ﻿using System;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Sections;
 using CodeBase.Services;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace CodeBase.Buildings
     {
         [Inject] private IUnitPoolingService _unitPoolingService;
 
+        [SerializeField] private SectionDynamic sectionParent;
 
         [SerializeField] private BuildingWindows buildingWindows;
         [SerializeField] private BuildingContainer buildingContainer;
@@ -42,6 +44,11 @@ namespace CodeBase.Buildings
             unit.transform.position = pos;
 
             unit.transform.SetParent(transform);
+
+            var point = sectionParent.transform.position.x;
+
+            unit.SetBorderValues(
+                new Vector2(point - sectionParent.LengthSection / 2, point + sectionParent.LengthSection / 2));
         }
     }
 }
