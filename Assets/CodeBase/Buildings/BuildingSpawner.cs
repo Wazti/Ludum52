@@ -40,6 +40,8 @@ namespace CodeBase.Buildings
             var pos = buildingWindows.GetRandomWindow().GetPosition();
 
             unit.transform.position = pos;
+
+            unit.transform.SetParent(transform);
         }
     }
 }

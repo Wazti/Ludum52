@@ -45,7 +45,10 @@ namespace CodeBase.Unit
 
         public void IntakeUnit(Transform parent)
         {
-            transform.parent = parent;
+            _parent = transform.parent;
+
+            transform.SetParent(parent);
+
             _startPoint = transform.position;
             _rigidbody.bodyType = RigidbodyType2D.Kinematic;
 
