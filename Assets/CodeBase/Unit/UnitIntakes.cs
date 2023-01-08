@@ -40,7 +40,7 @@ namespace CodeBase.Unit
         public void Move(Vector3 point, float speed)
         {
             transform.Translate(new Vector3(0,
-                point.y - _startPoint.y, 0) * speed);
+                point.y - transform.position.y, 0) * speed);
         }
 
         public void IntakeUnit(Transform parent)
