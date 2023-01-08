@@ -1,5 +1,6 @@
 ﻿using System;
 using CodeBase.Services.InputService;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -11,14 +12,18 @@ namespace CodeBase.Hero
         [Inject] private IInputService _inputService;
 
         [SerializeField] private HeroBoost heroBoost;
-        
+
         public HeroWeight heroWeight;
 
         [Range(1, 10)] public float HorizontalSpeed = 4f;
 
-        [Range(1, 10)] public float VerticalSpeed = 4f;
+        [Range(1, 10)] public float UpSpeed = 3f;
 
-        [Range(0, 40f)] public float Enercia;
+
+        [MinMaxSlider(0, 5f, true)] public Vector2 DownSpeed;
+
+        [SerializeField] private float pointGround = -3.874f;
+        [SerializeField] private float pointSky = 5f;
 
         private Rigidbody2D _rigidbody;
 
@@ -42,9 +47,23 @@ namespace CodeBase.Hero
         private float GetVelocityY(float axisY)
         {
             if (heroWeight.IsOverWeight)
-                return Math.Min(_rigidbody.velocity.y + axisY * VerticalSpeed * Time.deltaTime, axisY * VerticalSpeed);
+                return Math.Min(_rigidbody.velocity.y + axisY * GetVerticalSpeed(axisY) * Time.deltaTime,
+                    axisY * UpSpeed);
 
-            return axisY * VerticalSpeed;
+            return axisY * GetVerticalSpeed(axisY);
+        }
+
+        private float GetVerticalSpeed(float axisY)
+        {
+            if (axisY > 0) return UpSpeed;
+
+            var posY = transform.position.y;
+
+            if (posY < pointGround) return DownSpeed.x;
+
+            if (posY > pointSky) return DownSpeed.y;
+
+            return DownSpeed.x + ((posY - pointGround) / (pointSky - pointGround)) * (DownSpeed.y - DownSpeed.x);
         }
     }
 }

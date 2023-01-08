@@ -247,9 +247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroBoost: {fileID: 7649023059454158428}
   heroWeight: {fileID: 7649023059454158426}
-  HorizontalSpeed: 4
-  VerticalSpeed: 3
-  Enercia: 40
+  HorizontalSpeed: 5.5
+  UpSpeed: 3
+  DownSpeed: {x: 0.44476357, y: 1.4311336}
+  pointGround: -3.874
+  pointSky: 5
 --- !u!114 &7649023059454158430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,11 +333,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentWeight: 0
-  MaxWeight: 400
-  deltaWeight: 200
-  StrengthDown: 2
+  deltaWeight: 600
+  StrengthDown: 1.6
   heroCapacity: {fileID: 7649023059454158427}
   heroIntake: {fileID: 7649023059454158406}
+  heroStats: {fileID: 7649023059454158431}
+  weightStat: {fileID: 11400000, guid: 029ee3d0e90c6004fa5726267938efff, type: 2}
   _rigidBody: {fileID: 7649023059454158421}
 --- !u!114 &7649023059454158427
 MonoBehaviour:
@@ -417,7 +420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649023059454158420}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ec9c02a2e3842359e4b92ff0b1c568f, type: 3}
   m_Name: 
