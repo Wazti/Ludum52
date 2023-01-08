@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f364909b-cbef-4efc-bc51-2ce9c6bc4b38}">
+		<property name="assetPath">
+			<value>SFX/SFX_UFO_Suck.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.3091041666666658</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6315eae-30f5-45c5-9542-cbc51a5ae25e}</destination>
+		</relationship>
+	</object>
+</objects>

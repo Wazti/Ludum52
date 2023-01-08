@@ -195,7 +195,7 @@
 	</object>
 	<object class="PitchShifterEffect" id="{d4140b14-b9a7-40fb-ad83-475fea7cd0d8}">
 		<property name="fftSize">
-			<value>1960</value>
+			<value>4096</value>
 		</property>
 		<property name="overlap">
 			<value>1</value>
