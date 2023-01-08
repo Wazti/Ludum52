@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2849380844897047691}
   - component: {fileID: 7146786332795906309}
   - component: {fileID: 1780620419086016668}
+  - component: {fileID: 3657894113374632352}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -133,9 +134,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf828c3921745d487898735d29f1cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDownToSpawn: 1
   buildingWindows: {fileID: 7146786332795906309}
   buildingContainer: {fileID: 2849380844897047691}
+  buildingStrength: {fileID: 3657894113374632352}
+--- !u!114 &3657894113374632352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60274767081168307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24519d9202ac41ccb508d54c01450341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolDownToSpawn: 2
+  StrengthRange: {x: 1, y: 40}
+  _strength: 0
+  speedStrength: 5
+  buildingWindows: {fileID: 7146786332795906309}
 --- !u!1001 &3456340959684765058
 PrefabInstance:
   m_ObjectHideFlags: 0

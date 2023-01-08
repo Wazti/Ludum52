@@ -34,5 +34,7 @@ namespace CodeBase.Buildings
         }
 
         public BuildingIntake GetRandomWindow() => activeWindows[Random.Range(0, activeWindows.Count)];
+
+        public bool IsActive => activeWindows.Count > 0;
     }
 }

@@ -9,5 +9,6 @@ namespace CodeBase.Unit.Scriptables
         public BaseUnit prefab;
         public string name;
         public BaseStats stats;
+        public UnitType unitType;
     }
 }

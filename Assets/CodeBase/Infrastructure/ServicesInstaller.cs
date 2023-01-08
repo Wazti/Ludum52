@@ -11,6 +11,7 @@ namespace CodeBase.Infrastructure
     public class ServicesInstaller : MonoInstaller
     {
         [SerializeField] private CoroutineRunner coroutineRunner;
+        [SerializeField] private UnitPoolingService unitPoolingService;
 
         public override void InstallBindings()
         {
@@ -19,6 +20,9 @@ namespace CodeBase.Infrastructure
             Container.BindInterfacesAndSelfTo<GameFactory>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<UnitFactory>().AsSingle().NonLazy();
             Container.Bind<ICoroutineRunner>().To<CoroutineRunner>().FromComponentInNewPrefab(coroutineRunner)
+                .AsSingle()
+                .NonLazy();
+            Container.Bind<IUnitPoolingService>().To<UnitPoolingService>().FromComponentInNewPrefab(unitPoolingService)
                 .AsSingle()
                 .NonLazy();
             Container.BindInterfacesAndSelfTo<SaveLoadService>().AsSingle().NonLazy();

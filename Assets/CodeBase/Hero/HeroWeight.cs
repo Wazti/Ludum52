@@ -1,4 +1,5 @@
 ﻿using System;
+using CodeBase.Stats.Scriptables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,7 +11,9 @@ namespace CodeBase.Hero
         [ProgressBar(0, "MaxWeight", 0.4f, .1f, .3f)]
         public float CurrentWeight = 0f;
 
-        public float MaxWeight = 500f;
+        public float MaxWeight => !heroStats || heroStats.StatsSystem == null
+            ? 0
+            : heroStats.StatsSystem.GetStat(weightStat).Value;
 
         public float deltaWeight = 200f;
 
@@ -18,6 +21,8 @@ namespace CodeBase.Hero
 
         [SerializeField] private HeroCapacity heroCapacity;
         [SerializeField] private HeroTickUnits heroIntake;
+        [SerializeField] private HeroStatsSystem heroStats;
+        [SerializeField] private StatType weightStat;
 
 
         [SerializeField] private Rigidbody2D _rigidBody;

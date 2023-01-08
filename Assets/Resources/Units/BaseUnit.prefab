@@ -106,6 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c04f534b7324d05afe1f7a0761ede20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 0}
+  unitMove: {fileID: 1890051317484875065}
+  unitFall: {fileID: 3760287379552058309}
+  unitFly: {fileID: 7020226633695058942}
+  _collider: {fileID: 7807468329944504793}
+  _rigidbody2D: {fileID: 7807468329944504773}
 --- !u!114 &4933885177663787190
 MonoBehaviour:
   m_ObjectHideFlags: 0

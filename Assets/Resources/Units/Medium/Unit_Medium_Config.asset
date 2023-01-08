@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 3372172109006994494, guid: bb1bfe49647de4f47bfc35dcf3068ef2, type: 3}
   name: Medium Unit
   stats: {fileID: 11400000, guid: d1ee4993f8ca87841a8bb0411a3b6842, type: 2}
+  unitType: 1

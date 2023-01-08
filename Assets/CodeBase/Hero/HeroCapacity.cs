@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Services;
 using CodeBase.Unit;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.Hero
 {
@@ -16,13 +18,15 @@ namespace CodeBase.Hero
             get => _currentUnits;
         }
 
+        [Inject] private IUnitPoolingService _unitPoolingService;
+
         public event Action ModifyTakenEnemies;
 
         public void AddUnit(IUnitIntakes unitIntakes)
         {
             _currentUnits.Add(new UnitInfo(unitIntakes.Mass));
 
-            Destroy(unitIntakes.GameObject);
+            _unitPoolingService.DespawnUnit(unitIntakes.GameObject.GetComponent<BaseUnit>());
 
             ModifyTakenEnemies?.Invoke();
         }
