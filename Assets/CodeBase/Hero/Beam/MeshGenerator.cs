@@ -39,25 +39,32 @@ public class MeshGenerator : MonoBehaviour {
         
         //Right Bottom
         vertices[3] = new Vector3(rBot.x, rBot.y, z);*/
-        
+
+        var localLTop = transform.InverseTransformPoint(lTop);
+        var localLBot = transform.InverseTransformPoint(lBot);
+        var localRTop = transform.InverseTransformPoint(rTop);
+        var localRBot = transform.InverseTransformPoint(rBot);
+
+        var localLMidBot = transform.InverseTransformPoint(lMidBot);
+        var localRMidBot = transform.InverseTransformPoint(rMidBot);
         
         //Left Top
-        vertices[0] = new Vector3(lTop.x, lTop.y, z);
+        vertices[0] = new Vector3(localLTop.x, localLTop.y, z);
         
         //Left Bottom
-        vertices[1] = new Vector3(lBot.x, lBot.y, z);
+        vertices[1] = new Vector3(localLBot.x, localLBot.y, z);
 
         //mid left
-        vertices[2] = new Vector3(lMidBot.x, lMidBot.y, z);
+        vertices[2] = new Vector3(localLMidBot.x, localLMidBot.y, z);
         
         //mid right
-        vertices[3] = new Vector3(rMidBot.x, rMidBot.y, z);
+        vertices[3] = new Vector3(localRMidBot.x, localRMidBot.y, z);
         
         //Right Bottom
-        vertices[4] = new Vector3(rBot.x, rBot.y, z);
+        vertices[4] = new Vector3(localRBot.x, localRBot.y, z);
         
         //Right Top
-        vertices[5] = new Vector3(rTop.x, rTop.y, z);
+        vertices[5] = new Vector3(localRTop.x, localRTop.y, z);
 
         mesh.vertices = vertices;
         mesh.triangles = new int[] {2, 1, 0, 0, 5, 2, 5, 3, 2, 3, 5, 4};

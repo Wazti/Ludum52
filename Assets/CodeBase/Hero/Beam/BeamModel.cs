@@ -25,32 +25,8 @@ namespace CodeBase.Hero.Beam
         public float CastAngle => _castAngle;
         
         //Cast
-        public Vector2 LeftStartPos
-        {
-            get
-            {
-                var pos = StartPos;
-                pos.x -= _startRange;
-                return pos;
-            }
-        }
-        
-        public Vector2 RightStartPos
-        {
-            get
-            {
-                var pos = StartPos;
-                pos.x += _startRange;
-                return pos;
-            }
-        }
-        public Vector2 StartPos
-        {
-            get
-            {
-                return _startPoint.position;
-            }
-        }
+        public Vector2 LeftStartPos => _startPointLeft.position;
+        public Vector2 RightStartPos => _startPointRight.position;
 
         public float UfoRotation => _ufo.eulerAngles.z;
         
@@ -59,7 +35,8 @@ namespace CodeBase.Hero.Beam
         
         
         [SerializeField] private float _startRange = 0.25f;
-        [SerializeField] private Transform _startPoint;
+        [SerializeField] private Transform _startPointLeft;
+        [SerializeField] private Transform _startPointRight;
         [SerializeField] private Transform _ufo;
         [Header("")]
         [SerializeField] private LayerMask _castMask;
