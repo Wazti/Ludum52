@@ -29,6 +29,7 @@ namespace CodeBase.Infrastructure
             Container.Bind<ICurtainService>().To<CurtainService>().FromComponentInNewPrefab(curtainService)
                 .AsSingle()
                 .NonLazy();
+            Container.BindInterfacesAndSelfTo<LevelSessionService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SaveLoadService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<StaticDataService>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SceneLoader>().AsSingle().NonLazy();

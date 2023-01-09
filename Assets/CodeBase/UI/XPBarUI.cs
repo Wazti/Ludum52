@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CodeBase.Services;
 using CodeBase.Services.PersistentProgress;
 using DG.Tweening;
 using TMPro;
@@ -12,6 +13,8 @@ namespace CodeBase.UI
     public class XPBarUI : MonoBehaviour
     {
         [Inject] private IPersistentProgressService _progressService;
+
+        [Inject] private ILevelSessionService _levelSessionService;
 
         [SerializeField] private TextMeshProUGUI levelText;
 
@@ -36,9 +39,9 @@ namespace CodeBase.UI
 
         private void SetupPrevious()
         {
-            lastLevel = 1;
-            lastXp = 0;
-            lastProgress = 0;
+            lastLevel = _levelSessionService.levelOld;
+            lastXp = _levelSessionService.xpOld;
+            lastProgress = (int) Math.Ceiling(_levelSessionService.progressOld * 100);
             SetCurrentLevel(lastLevel);
             CalculateSlices(lastProgress);
         }
@@ -67,7 +70,7 @@ namespace CodeBase.UI
 
         private void AnimateXPBar()
         {
-            var seq = DOTween.Sequence().SetDelay(1f);
+            var seq = DOTween.Sequence().SetDelay(.4f);
 
             if (currentLevel == lastLevel)
             {

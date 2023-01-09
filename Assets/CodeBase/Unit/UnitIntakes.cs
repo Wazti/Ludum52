@@ -10,6 +10,7 @@ namespace CodeBase.Unit
     {
         private const string _progressFMODEvent = "Intake";
 
+        [SerializeField] private BaseUnit unit;
         [SerializeField] private UnitFly unitFly;
         [SerializeField] private UnitFall unitFall;
         [SerializeField] private UnitMove unitMove;
@@ -24,6 +25,11 @@ namespace CodeBase.Unit
 
 
         private Vector3 _startPoint;
+
+        public UnitType UnitType
+        {
+            get => unit.UnitType;
+        }
 
         public GameObject GameObject => gameObject;
 
@@ -51,7 +57,7 @@ namespace CodeBase.Unit
         {
             var t =
                 1 - (Math.Min(Vector2.Distance(point, transform.position), 4f) / 4f);
-            
+
             fmodEmitter.SetParameter(_progressFMODEvent, t);
 
             transform.Translate(new Vector3(0,
@@ -78,7 +84,7 @@ namespace CodeBase.Unit
 
                 yield return null;
             }
-        }   
+        }
 
         public void IntakeUnit(Transform parent)
         {

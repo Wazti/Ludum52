@@ -7,9 +7,11 @@ namespace CodeBase.Unit
     {
         public float Mass;
 
-        public UnitInfo(float mass)
+        public UnitType Type;        
+        public UnitInfo(float mass, UnitType type)
         {
             Mass = mass;
+            Type = type;
         }
     }
 }

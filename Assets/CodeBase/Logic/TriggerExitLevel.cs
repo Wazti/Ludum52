@@ -9,6 +9,7 @@ namespace CodeBase.Logic
 {
     public class TriggerExitLevel : MonoBehaviour
     {
+        [Inject] private ILevelSessionService _levelService;
         [Inject] private ISceneLoader _sceneLoader;
         [Inject] private ICurtainService _curtainService;
         
@@ -21,6 +22,8 @@ namespace CodeBase.Logic
 
         private void OnHeroEnter(Collider2D obj)
         {
+            _levelService.WinLevel();
+            
             _curtainService.DOFade(1, .5f, () =>
             {
                 _sceneLoader.Load("Home", () =>
@@ -28,6 +31,7 @@ namespace CodeBase.Logic
                     _curtainService.DOFade(0, .5f, ()=> { });
                 });
             });
+            
           
         }
     }

@@ -1,42 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 using CodeBase.Services.PersistentProgress;
+using CodeBase.Unit;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
 namespace CodeBase.UI
 {
-    public class StatsActorUI : MonoBehaviour
+    public class StatsActorUI : SerializedMonoBehaviour
     {
         [Inject] private IPersistentProgressService _progressService;
 
+        [SerializeField] private Dictionary<UnitType, TextMeshProUGUI> texts;
 
-        [SerializeField] private TextMeshProUGUI thinText;
-        [SerializeField] private TextMeshProUGUI mediumText;
-        [SerializeField] private TextMeshProUGUI heavyText;
         [SerializeField] private TextMeshProUGUI cowText;
 
 
         private void Awake()
         {
-            SetThin(_progressService.Progress.StatisticsUnits.CountThin);
-            SetMedium(_progressService.Progress.StatisticsUnits.CountMedium);
-            SetHeavy(_progressService.Progress.StatisticsUnits.CountHeavy);
+            foreach (var keys in texts.Keys)
+            {
+                SetText(texts[keys], _progressService.Progress.StatisticsUnits.countUnits[keys]);
+            }
+
             SetCow(_progressService.Progress.StatisticsUnits.CountCows);
         }
 
-        private void SetThin(int count)
+        private void SetText(TextMeshProUGUI text, int count)
         {
-            thinText.text = count.ToString();
+            text.text = count.ToString();
         }
-        private void SetMedium(int count)
-        {
-            mediumText.text = count.ToString();
-        }
-        private void SetHeavy(int count)
-        {
-            heavyText.text = count.ToString();
-        }
+
         private void SetCow(int count)
         {
             cowText.text = count.ToString();

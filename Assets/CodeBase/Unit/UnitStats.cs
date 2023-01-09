@@ -7,7 +7,8 @@ namespace CodeBase.Unit
     public class UnitStats : MonoBehaviour
     {
         [SerializeField] private BaseStats heroStats;
-
+        
+        
         private StatsSystem _statsSystem;
 
         public StatsSystem StatsSystem => _statsSystem;

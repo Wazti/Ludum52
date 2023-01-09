@@ -11,6 +11,8 @@ namespace CodeBase.Hero
 {
     public class HeroCapacity : MonoBehaviour
     {
+        [Inject] private ILevelSessionService _levelSessionService;
+       
         private readonly List<UnitInfo> _currentUnits = new List<UnitInfo>();
 
         public List<UnitInfo> CurrentEnemiesTaken
@@ -24,8 +26,9 @@ namespace CodeBase.Hero
 
         public void AddUnit(IUnitIntakes unitIntakes)
         {
-            _currentUnits.Add(new UnitInfo(unitIntakes.Mass));
-
+            var unit = new UnitInfo(unitIntakes.Mass, unitIntakes.UnitType);
+            _currentUnits.Add(unit);
+            _levelSessionService.AddUnit(unit);
             _unitPoolingService.DespawnUnit(unitIntakes.GameObject.GetComponent<BaseUnit>());
 
             ModifyTakenEnemies?.Invoke();

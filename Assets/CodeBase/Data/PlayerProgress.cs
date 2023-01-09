@@ -35,9 +35,9 @@ namespace CodeBase.Data
         {
             upgradeList = new List<UpgradeConfig>();
 
-            Points = 10;
+            Points = 0;
             Day = 1;
-            
+
             StatisticsUnits = new StatisticsUnits();
             LevelHero = new LevelHero();
         }

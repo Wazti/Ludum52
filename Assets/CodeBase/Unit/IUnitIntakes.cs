@@ -4,6 +4,7 @@ namespace CodeBase.Unit
 {
     public interface IUnitIntakes
     {
+        UnitType UnitType { get; }
         GameObject GameObject { get; }
         float Mass { get; }
 

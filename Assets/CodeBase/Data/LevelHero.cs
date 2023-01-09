@@ -16,16 +16,33 @@ namespace CodeBase.Data
 
         public LevelHero()
         {
-            CurrentLevel = 3;
-            xp = 2000;
+            CurrentLevel = 1;
+            xp = 0;
             CalculateXPToNext();
         }
 
         public void UpgradeLevel()
         {
             CurrentLevel += 1;
-            xp = 0;
+            xp -= XPToNext;
+            CalculateXPToNext();
         }
+
+        public void ReCalcLevels()
+        {
+            if (xp < XPToNext)
+            {
+                return;
+            }
+            
+            UpgradeLevel();
+
+            if (xp >= XPToNext)
+            {
+                ReCalcLevels();
+            }
+        }
+
 
         public void CalculateXPToNext()
         {
