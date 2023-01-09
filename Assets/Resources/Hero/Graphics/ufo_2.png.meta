@@ -132,9 +132,9 @@ TextureImporter:
       name: ufo_2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 64
+        width: 102
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -153,9 +153,9 @@ TextureImporter:
       name: ufo_2_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 85
         y: 0
-        width: 64
+        width: 102
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -174,9 +174,9 @@ TextureImporter:
       name: ufo_2_2
       rect:
         serializedVersion: 2
-        x: 130
+        x: 169
         y: 0
-        width: 64
+        width: 102
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -195,9 +195,9 @@ TextureImporter:
       name: ufo_2_3
       rect:
         serializedVersion: 2
-        x: 195
+        x: 253
         y: 0
-        width: 64
+        width: 102
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

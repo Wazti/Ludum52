@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: {fileID: 11400000, guid: c3c59c546f9aea04392763b058100ee0, type: 2}
   _heroStats: {fileID: 7649023059454158431}
+  _viewDamage: {fileID: 4845358537447174337}
   _triggerObserver: {fileID: 5070628700854477230}
 --- !u!1 &7649023059683246845
 GameObject:
@@ -718,6 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7649023059947343207}
   - component: {fileID: 4033177043475423044}
+  - component: {fileID: 4845358537447174337}
   m_Layer: 7
   m_Name: View
   m_TagString: Untagged
@@ -763,7 +765,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b5e9e15c4ed01654e8e53141218fe92f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -795,6 +797,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4845358537447174337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649023059947343206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4904674b3efe49f8b036842c4e1a9fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeOutTime: 0.2
+  _fadeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _material: {fileID: 2100000, guid: b5e9e15c4ed01654e8e53141218fe92f, type: 2}
 --- !u!1 &8818907638401368456
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +888,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b5e9e15c4ed01654e8e53141218fe92f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

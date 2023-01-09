@@ -11,6 +11,7 @@ namespace CodeBase.Hero
     {
         [SerializeField] private StatType MaxHealth;
         [SerializeField] private HeroStatsSystem _heroStats;
+        [SerializeField] private HeroViewDamage _viewDamage;
 
         private int currentHealth;
 
@@ -30,9 +31,9 @@ namespace CodeBase.Hero
         private void OnTrigger(Collider2D obj)
         {
             if (!obj.TryGetComponent<Bullet>(out var bullet)) return;
-
+            
+            _viewDamage.OnDamage();
             bullet.Explodes();
-
             currentHealth -= bullet.damage;
         }
     }
