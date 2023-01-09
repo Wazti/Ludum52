@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 64b8185fc09cc6b42b91f2d870467043
+guid: 244c15a2429b2cf41980d8bad3a5dbe1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ufo_2_0
+      name: ufo_2_down_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +137,20 @@ TextureImporter:
         width: 64
         height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ea73f72685101043b1c2053b03ed544
-      internalID: 399443698
+      spriteID: bba3be851e2ac9444ac0c5a54c82f729
+      internalID: -2092955778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_2_1
+      name: ufo_2_down_1
       rect:
         serializedVersion: 2
         x: 65
@@ -158,20 +158,20 @@ TextureImporter:
         width: 64
         height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 793e6b584048cac4a8c2820e9d5c82d1
-      internalID: 398095884
+      spriteID: ae2afb56c88f87743adb2da84ebdff0a
+      internalID: -687138091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_2_2
+      name: ufo_2_down_2
       rect:
         serializedVersion: 2
         x: 130
@@ -179,20 +179,20 @@ TextureImporter:
         width: 64
         height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 211549f4b12fa544ea6856d615cd73a9
-      internalID: 1739015718
+      spriteID: 944c4b310b73d04408197d981b3d1c9e
+      internalID: -124070916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_2_3
+      name: ufo_2_down_3
       rect:
         serializedVersion: 2
         x: 195
@@ -200,14 +200,14 @@ TextureImporter:
         width: 64
         height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9761ef1a53c6d4e46babe96a8d2159aa
-      internalID: 1029936246
+      spriteID: d46bf479a018d144baf33876b5cf53d2
+      internalID: -686251417
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ufo_2_1: 398095884
-      ufo_2_2: 1739015718
-      ufo_2_3: 1029936246
-      ufo_2_0: 399443698
+      ufo_2_down_3: -124070916
+      ufo_2_down_1: -2092955778
+      ufo_2_down_0: 101679389
+      ufo_2_down_2: -687138091
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

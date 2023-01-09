@@ -7,6 +7,7 @@ namespace CodeBase.Hero
     public class HeroAnimator : MonoBehaviour
     {
         public Reanimator animator;
+        [SerializeField] private Reanimator _animatorDown;
 
         public HeroAnimatorState State { get; private set; }
 
@@ -14,6 +15,7 @@ namespace CodeBase.Hero
         private void Awake()
         {
             animator.AddListener(AnimatorDrivers.State, StateFor);
+            _animatorDown.AddListener(AnimatorDrivers.State, StateFor);
         }
 
 
@@ -35,12 +37,14 @@ namespace CodeBase.Hero
         public void SetFlip(bool flip)
         {
             animator.Flip = flip;
+            _animatorDown.Flip = flip;
         }
 
 
         public void SetState(HeroAnimatorState state)
         {
             animator.Set(AnimatorDrivers.State, (int) state);
+            _animatorDown.Set(AnimatorDrivers.State, (int) state);
         }
 
         private void StateFor()
