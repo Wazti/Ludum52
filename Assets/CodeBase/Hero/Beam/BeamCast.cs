@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class BeamCast : MonoBehaviour
 {
-    public Vector2 Cast(float angle, Vector2 startPos, LayerMask mask, Color color)
+    public Vector2 Cast(float angle, Vector2 startPos, LayerMask mask, Color color, float range)
     {
-        var result = Vector2.zero;
         var direction = GetDirectionVector2D(angle);
-        var range = Mathf.Infinity;
-        
+
         var ray = Physics2D.Raycast(startPos, direction, range, mask);
-        Color col = new Color(255, 0, 0, 255);
+
+        var result = Vector2.zero;
         
-        Debug.DrawLine(startPos, ray.point, color);
-        Debug.Log(ray.point);
+        if (ray.collider == null)
+        {
+            result = startPos + direction * range;
+        }
+        else
+        {
+            result = ray.point;;
+        }
         
-        return ray.point;
+        Debug.DrawLine(startPos, result, color);
+        Debug.Log(result);
+
+        return result;
     }
     
     public Vector2 GetDirectionVector2D(float angle)

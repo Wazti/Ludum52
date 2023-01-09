@@ -13,8 +13,10 @@ public class BeamController : MonoBehaviour
     
     private void Update()
     {
-        var leftPoint =  _cast.Cast(angle: _model.LeftAngle, startPos:_model.LeftStartPos, mask:_model.CastMask, Color.cyan);
-        var rightPoint = _cast.Cast(angle: _model.RightAngle, startPos:_model.RightStartPos, mask:_model.CastMask, Color.red);
-        _meshGenerator.Generate(leftPoint, _model.LeftStartPos, _model.RightStartPos, rightPoint);
+        var leftPoint =  _cast.Cast(_model.LeftAngle, _model.LeftStartPos, _model.CastMask, Color.cyan, _model.Range);
+        var rightPoint = _cast.Cast(_model.RightAngle, _model.RightStartPos, _model.CastMask, Color.red, _model.Range);
+        var midleftPoint = leftPoint + (rightPoint - leftPoint).normalized * Mathf.Abs(_model.LeftStartLocalPos.x);
+        var midRightPoint = rightPoint + (leftPoint - rightPoint).normalized * Mathf.Abs(_model.RighStartLocalPos.x);
+        _meshGenerator.Generate(leftPoint, _model.LeftStartPos, _model.RightStartPos, rightPoint, midleftPoint, midRightPoint);
     }
 }

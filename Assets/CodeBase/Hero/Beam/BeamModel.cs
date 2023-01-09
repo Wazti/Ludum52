@@ -25,8 +25,11 @@ namespace CodeBase.Hero.Beam
         public float CastAngle => _castAngle;
         
         //Cast
+        public float Range = 1f;
         public Vector2 LeftStartPos => _startPointLeft.position;
+        public Vector2 LeftStartLocalPos => _startPointLeft.localPosition;
         public Vector2 RightStartPos => _startPointRight.position;
+        public Vector2 RighStartLocalPos => _startPointRight.localPosition;
 
         public float UfoRotation => _ufo.eulerAngles.z;
         

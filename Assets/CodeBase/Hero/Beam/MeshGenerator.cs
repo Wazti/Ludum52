@@ -14,12 +14,12 @@ public class MeshGenerator : MonoBehaviour {
     [SerializeField] private MeshRenderer _renderer;
     [SerializeField] private MeshFilter _filter;
 
-    public void Generate(Vector2 lBot, Vector2 lTop, Vector2 rTop, Vector2 rBot)
+    public void Generate(Vector2 lBot, Vector2 lTop, Vector2 rTop, Vector2 rBot, Vector2 lMid, Vector2 rMid)
     {
         var mesh = new Mesh();
 
-        var lMidBot = new Vector2(lTop.x, lBot.y);
-        var rMidBot = new Vector2(rTop.x, rBot.y);
+        //var lMidBot = new Vector2(lTop.x, lBot.y);
+        //var rMidBot = new Vector2(rTop.x, rBot.y);
         
         var vertices = new Vector3[6];
 
@@ -28,8 +28,8 @@ public class MeshGenerator : MonoBehaviour {
         var localRTop = transform.InverseTransformPoint(rTop);
         var localRBot = transform.InverseTransformPoint(rBot);
 
-        var localLMidBot = transform.InverseTransformPoint(lMidBot);
-        var localRMidBot = transform.InverseTransformPoint(rMidBot);
+        var localLMidBot = transform.InverseTransformPoint(lMid);
+        var localRMidBot = transform.InverseTransformPoint(rMid);
         
         //Left Top
         vertices[0] = new Vector3(localLTop.x, localLTop.y, z);

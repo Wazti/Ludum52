@@ -55,8 +55,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _Fade: 1
     - _FlowSpeed: 0.04
     - _Flow_Intensity: 2
+    - _Opacity: 0.3
     - _Scale: 214.83
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
