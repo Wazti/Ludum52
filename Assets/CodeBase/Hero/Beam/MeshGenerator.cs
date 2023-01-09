@@ -18,7 +18,7 @@ public class MeshGenerator : MonoBehaviour {
     {
         var mesh = new Mesh();
 
-        var vertices = new Vector3[6];
+        var vertices = new Vector3[4];
 
         var localLTop = transform.InverseTransformPoint(lTop);
         var localLBot = transform.InverseTransformPoint(lBot);
@@ -34,29 +34,27 @@ public class MeshGenerator : MonoBehaviour {
         //Left Bottom
         vertices[1] = new Vector3(localLBot.x, localLBot.y, z);
 
-        //mid left
-        vertices[2] = new Vector3(localLMidBot.x, localLMidBot.y, z);
+        /*//mid left
+        vertices[2] = new Vector3(localLMidBot.x, localLMidBot.y, z);*/
         
-        //mid right
-        vertices[3] = new Vector3(localRMidBot.x, localRMidBot.y, z);
+        /*//mid right
+        vertices[3] = new Vector3(localRMidBot.x, localRMidBot.y, z);*/
         
         //Right Bottom
-        vertices[4] = new Vector3(localRBot.x, localRBot.y, z);
+        vertices[2] = new Vector3(localRBot.x, localRBot.y, z);
         
         //Right Top
-        vertices[5] = new Vector3(localRTop.x, localRTop.y, z);
+        vertices[3] = new Vector3(localRTop.x, localRTop.y, z);
 
         mesh.vertices = vertices;
-        mesh.triangles = new int[] {2, 1, 0, 0, 5, 2, 5, 3, 2, 3, 5, 4};
-        
-        /*var uvs = new Vector2[vertices.Length];
-        for (var i = 0; i < uvs.Length; i++)
+        mesh.triangles = new[] {0, 2, 1, 0, 3, 2};
+        mesh.uv = new[]
         {
-            var uv = uvs[i];
-            uv = vertices[i];
-        }
-
-        mesh.uv = uvs;*/
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(1, 1),
+            new Vector2(0, 1)
+        };
 
         _renderer.material = mat;
         _filter.mesh = mesh;
