@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bf3f8953-224f-4cae-bd9b-1a9bda8d8413}">
+		<property name="assetPath">
+			<value>alien hav7.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>108.816</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6315eae-30f5-45c5-9542-cbc51a5ae25e}</destination>
+		</relationship>
+	</object>
+</objects>
