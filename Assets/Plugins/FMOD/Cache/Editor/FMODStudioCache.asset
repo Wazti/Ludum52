@@ -123,11 +123,38 @@ MonoBehaviour:
   Path: Assets/FMOD/AlienHarvest/Build/Desktop/AMB.bank
   Name: AMB
   StudioPath: bank:/AMB
-  lastModified: 638088862502817999
+  lastModified: 638088191065239573
   FileSizes:
   - Name: Desktop
     Value: 2136960
   Exists: 1
+--- !u!114 &-5201133046802371861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUS_Gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/MUS_Gameplay
+  Guid:
+    Data1: 905784265
+    Data2: 1281738605
+    Data3: 1663906705
+    Data4: 468689783
+  Banks:
+  - {fileID: -4271396743650562345}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 164573
 --- !u!114 &-4515957322347691697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,10 +194,30 @@ MonoBehaviour:
   Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638088862502917730
+  lastModified: 638088791795274168
   FileSizes:
   - Name: Desktop
     Value: 395120
+  Exists: 1
+--- !u!114 &-4271396743650562345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MUS.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/AlienHarvest/Build/Desktop/MUS.bank
+  Name: MUS
+  StudioPath: bank:/MUS
+  lastModified: 638088974091117478
+  FileSizes:
+  - Name: Desktop
+    Value: 13937376
   Exists: 1
 --- !u!114 &-3525979227632524396
 MonoBehaviour:
@@ -211,7 +258,7 @@ MonoBehaviour:
   Path: Assets/FMOD/AlienHarvest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638088862505081948
+  lastModified: 638088866151628537
   FileSizes:
   - Name: Desktop
     Value: 967968
@@ -261,6 +308,7 @@ MonoBehaviour:
   - {fileID: -5609555408256209425}
   - {fileID: -4422728295061759598}
   - {fileID: -3248815467735684592}
+  - {fileID: -4271396743650562345}
   EditorEvents:
   - {fileID: 7544618962451187793}
   - {fileID: 3987693490157200936}
@@ -272,13 +320,42 @@ MonoBehaviour:
   - {fileID: -6255367401858819007}
   - {fileID: -7872313220689655125}
   - {fileID: -792116158774353277}
+  - {fileID: 169884015566858524}
+  - {fileID: -5201133046802371861}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4422728295061759598}
   StringsBanks:
   - {fileID: 2582338614192893285}
-  cacheTime: 638088862505081948
+  cacheTime: 638088974091127487
   cacheVersion: 131601
+--- !u!114 &169884015566858524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUS_Menu
+  m_EditorClassIdentifier: 
+  Path: event:/MUS_Menu
+  Guid:
+    Data1: -736993251
+    Data2: 1156570686
+    Data3: 1316545467
+    Data4: 1699779356
+  Banks:
+  - {fileID: -4271396743650562345}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 110769
 --- !u!114 &209285482451435328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,10 +474,10 @@ MonoBehaviour:
   Path: Assets/FMOD/AlienHarvest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638088862502937683
+  lastModified: 638088974091127487
   FileSizes:
   - Name: Desktop
-    Value: 1520
+    Value: 1654
   Exists: 1
 --- !u!114 &3987693490157200936
 MonoBehaviour:

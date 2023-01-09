@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBig
       objectReference: {fileID: 0}
+    - target: {fileID: 7257428326904563515, guid: e9eadda8ec75e4245a4305df6613ae9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7928742475145857128, guid: e9eadda8ec75e4245a4305df6613ae9a, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -95,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1184965610, guid: 78b233978ef2d5e4b99c776052d1c96f, type: 3}
+    - target: {fileID: 8663520162329702512, guid: e9eadda8ec75e4245a4305df6613ae9a, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ce6bfcd50035344ca63867d24d3f951, type: 3}
     - target: {fileID: 8663520162329702512, guid: e9eadda8ec75e4245a4305df6613ae9a, type: 3}
       propertyPath: typeSpawn
       value: 2

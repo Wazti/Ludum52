@@ -50,8 +50,13 @@ namespace CodeBase.Services
             _progressService.Progress.LevelHero.ReCalcLevels();
 
             _progressService.Progress.Day += 1;
-            
+
             _progressService.Progress.Points += _progressService.Progress.LevelHero.CurrentLevel - levelOld;
+        }
+
+        public void LoseLevel()
+        {
+            _progressService.Progress.Day += 1;
         }
 
         public void AddUnit(UnitInfo unit)

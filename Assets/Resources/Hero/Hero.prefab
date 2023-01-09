@@ -489,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroMovement: {fileID: 7649023059454158417}
   heroStats: {fileID: 7649023059454158431}
+  heroHealth: {fileID: 8787580004239730045}
   maxEnergy: {fileID: 11400000, guid: 1c851923a165a1349a933fb00be80716, type: 2}
   MaxEnergy: 0
   Energy:

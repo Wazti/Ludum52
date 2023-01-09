@@ -15,6 +15,7 @@ namespace CodeBase.Services
         float progressOld { get; set; }
         void CopyData();
         void WinLevel();
+        void LoseLevel();
         void Clear();
         void AddUnit(UnitInfo unit);
     }

@@ -34,6 +34,11 @@ namespace CodeBase.Enemies
         private void Awake()
         {
             _layerMask = 1 << LayerMask.NameToLayer("Hero");
+           
+        }
+
+        private void OnEnable()
+        {
             enemyAnimator.animator.AddListener(AnimatorDrivers.Attack, Explode);
         }
 
@@ -83,6 +88,11 @@ namespace CodeBase.Enemies
             FMODUnity.RuntimeManager.PlayOneShot(fmodEvent, transform.position);
             _coolDown = CoolDown;
             enemyAnimator.Shoot();
+        }
+
+        private void OnDisable()
+        {
+            enemyAnimator.animator.RemoveListener(AnimatorDrivers.Attack, Explode);
         }
     }
 }

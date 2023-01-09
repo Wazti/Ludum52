@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca6e5c49f024f96a44da795bb74dcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 21300000, guid: df56dfee471acaf48bd4305d4e4a10bf, type: 3}
   enemyMove: {fileID: 8548013957261867910}
   enemyShoot: {fileID: 530457949304731931}
   animator: {fileID: 8843947685206793078}

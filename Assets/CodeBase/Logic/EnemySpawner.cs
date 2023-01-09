@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Sections;
 using CodeBase.Services;
+using CodeBase.Services.PersistentProgress;
 using CodeBase.Unit;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace CodeBase.Logic
 {
     public class EnemySpawner : MonoBehaviour
     {
+        [Inject] private IPersistentProgressService _progressService;
+
         [SerializeField] private List<UnitType> unitTypes;
 
         [SerializeField] private float distanceSpawn;
@@ -32,6 +35,8 @@ namespace CodeBase.Logic
 
         private void Awake()
         {
+            timeToSpawn = new Vector2(Math.Max(1, timeToSpawn.x - _progressService.Progress.LevelHero.CurrentLevel),
+                Math.Min(timeToSpawn.y, timeToSpawn.y - _progressService.Progress.LevelHero.CurrentLevel));
             _coolDown = Random.Range(timeToSpawn.x, timeToSpawn.y);
         }
 
@@ -60,7 +65,7 @@ namespace CodeBase.Logic
             }
 
             prefab.transform.position =
-                new Vector3(transform.position.x + diff,
+                new Vector3(_gameFactory.Hero.transform.position.x + diff,
                     -3.08f, 0);
 
             prefab.transform.SetParent(transform);

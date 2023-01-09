@@ -1,5 +1,6 @@
 ﻿using CodeBase.Services;
 using CodeBase.Unit;
+using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
@@ -8,6 +9,8 @@ namespace CodeBase.Enemies
     public class EnemyIntake : MonoBehaviour, IUnitIntakes
     {
         [Inject] private IUnitPoolingService poolingService;
+
+       [SerializeField] private Sprite death;
 
         [SerializeField] private EnemyMove enemyMove;
         [SerializeField] private EnemyShoot enemyShoot;
@@ -19,6 +22,8 @@ namespace CodeBase.Enemies
         public UnitType UnitType { get; }
         public GameObject GameObject { get; }
         public float Mass { get; }
+
+        private bool _isDone;
 
         public void Move(Vector3 point, float speed)
         {
@@ -32,9 +37,12 @@ namespace CodeBase.Enemies
 
         public void IntakeUnit(Transform parent)
         {
-            rigidBody.bodyType = RigidbodyType2D.Kinematic;
-            collider2d.isTrigger = true;
+            if (_isDone) return;
+
+            _isDone = true;
+            rigidBody.bodyType = RigidbodyType2D.Static;
             collider2d.enabled = false;
+            gameObject.layer = LayerMask.NameToLayer("Water");
 
             var prefab = poolingService.SpawnUnit(typeSpawn);
 
@@ -45,10 +53,14 @@ namespace CodeBase.Enemies
             prefab.transform.SetParent(transform);
 
             prefab.gameObject.SetActive(true);
+
             animator.SetState(EnemyAnimatorState.Dead);
             enemyMove.enabled = false;
             enemyShoot.enabled = false;
-        
+            enabled = false;
+            animator.enabled = false;
+            animator.animator.enabled = false;
+            animator.animator.Renderer.sprite = death;
         }
 
 
