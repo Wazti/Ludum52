@@ -13,8 +13,13 @@ namespace CodeBase.UI
 
         public void StartLevel()
         {
-            _sceneLoader.Load("Main", () => { _curtainService.DOFade(0, .5f, () => { }, false); });
-            _curtainService.DOFade(1, .5f, () => { }, false);
+            _curtainService.DOFade(1, .5f, () =>
+            {
+                _sceneLoader.Load("Main", () =>
+                {
+                    _curtainService.DOFade(0, .5f, ()=> { });
+                });
+            });
         }
     }
 }

@@ -22,15 +22,8 @@ namespace CodeBase.Unit
             unitMove.enabled = true;
             unitFall.enabled = false;
             unitFly.enabled = false;
-            gameObject.SetActive(true);
         }
 
-        public Vector2 BorderPositions;
-
-        public void SetBorderValues(Vector2 border)
-        {
-            BorderPositions = border;
-        }
-        
+        public Vector2 BorderPositions = new Vector2(-65.55f, 99f);
     }
 }
