@@ -418,6 +418,10 @@ PrefabInstance:
       propertyPath: Params.Array.data[0].Name
       value: Intake
       objectReference: {fileID: 0}
+    - target: {fileID: 2849380844897047691, guid: 8b66cae5a74cd34439575192e8575df9, type: 3}
+      propertyPath: rangeUnits.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3657894113374632352, guid: 8b66cae5a74cd34439575192e8575df9, type: 3}
       propertyPath: fmodEvent
       value: 

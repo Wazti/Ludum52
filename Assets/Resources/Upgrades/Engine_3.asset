@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: engine
   Icon: {fileID: 21300000, guid: 97256e26b2d92e542a0544b29e638215, type: 3}
   statUpgrade: {fileID: 11400000, guid: 029ee3d0e90c6004fa5726267938efff, type: 2}
-  statValue: 2000
+  statValue: 5000

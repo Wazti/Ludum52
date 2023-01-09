@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a13de26ba145b39dd381243442db1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 4
+  heroIntake: {fileID: 7649023059454158430}
   _startRange: 0.25
   _startPointLeft: {fileID: 6847310572657339234}
   _startPointRight: {fileID: 3828131553715202719}

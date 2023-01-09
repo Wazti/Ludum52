@@ -2661,7 +2661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: orthographic size
-      value: 4.21875
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -2669,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.041666668
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -2677,11 +2677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.44444445
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_RenderShadows
@@ -2877,6 +2877,10 @@ PrefabInstance:
     - target: {fileID: 7649023059454158420, guid: b6af9c51f08d3fc40a9e2e58540e79b7, type: 3}
       propertyPath: m_Name
       value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649023059454158426, guid: b6af9c51f08d3fc40a9e2e58540e79b7, type: 3}
+      propertyPath: deltaWeight
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6af9c51f08d3fc40a9e2e58540e79b7, type: 3}
