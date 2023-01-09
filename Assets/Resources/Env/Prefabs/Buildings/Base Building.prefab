@@ -153,6 +153,7 @@ MonoBehaviour:
   StrengthRange: {x: 1, y: 40}
   _strength: 0
   speedStrength: 5
+  fmodEvent: {fileID: 2095456424733400632}
   buildingWindows: {fileID: 7146786332795906309}
 --- !u!114 &2834722099238571556
 MonoBehaviour:

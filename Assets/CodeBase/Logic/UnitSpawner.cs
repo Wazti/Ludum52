@@ -78,12 +78,9 @@ namespace CodeBase.Logic
 
             prefab.transform.SetParent(transform);
 
-            var point = sectionParent.transform.position.x;
-
-            prefab.SetBorderValues(
-                new Vector2(point - sectionParent.LengthSection / 2, point + sectionParent.LengthSection / 2));
+            prefab.gameObject.SetActive(true);
         }
-        
+
 
         private void OnDrawGizmos()
         {

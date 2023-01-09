@@ -52,7 +52,8 @@ namespace CodeBase.Unit
 
         private void GenerateDistance()
         {
-            var point = Random.Range(baseUnit.BorderPositions.x, baseUnit.BorderPositions.y);
+            var point = Random.Range(Math.Max(baseUnit.BorderPositions.x, transform.position.x - 5f),
+                Math.Max(baseUnit.BorderPositions.y, transform.position.x + 5f));
 
             _distanceLeft = point - transform.position.x;
 

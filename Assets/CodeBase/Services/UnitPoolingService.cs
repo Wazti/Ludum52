@@ -26,7 +26,6 @@ namespace CodeBase.Services
             {
                 RemoveFreeUnit(freeUnit);
                 AddActiveUnit(freeUnit);
-
                 freeUnit.Reset();
                 return freeUnit;
             }
@@ -40,6 +39,7 @@ namespace CodeBase.Services
 
         public void DespawnUnit(BaseUnit unit)
         {
+            unit.Reset();
             RemoveActiveUnit(unit);
             AddFreeUnit(unit);
             unit.gameObject.SetActive(false);
