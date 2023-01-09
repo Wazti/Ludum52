@@ -19,10 +19,10 @@ namespace CodeBase.Infrastructure.States
             _progressService = progressService;
             _saveLoadService = saveLoadService;
         }
-        
+
         public void Enter()
         {
-            LoadProgressOrInitNew();
+            //  LoadProgressOrInitNew();
             _gameStateMachine.Enter<LoadLevelState, string>("Main");
         }
 
