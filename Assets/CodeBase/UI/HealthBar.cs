@@ -15,10 +15,8 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < _maxHealth; i++)
         {
-            var state = i <= current;
-
-            _healths[i].enabled = state;
-            _locks[i].enabled = !state;
+            _healths[i].enabled = i <= current;
+            _locks[i].enabled = i <= maxCurrent;
         }
     }
 }
