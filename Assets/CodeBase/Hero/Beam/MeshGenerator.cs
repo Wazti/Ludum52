@@ -52,7 +52,17 @@ public class MeshGenerator : MonoBehaviour {
         mesh.vertices = vertices;
         mesh.triangles = new int[] {2, 1, 0, 0, 5, 2, 5, 3, 2, 3, 5, 4};
         
+        var uvs = new Vector2[vertices.Length];
+        for (var i = 0; i < uvs.Length; i++)
+        {
+            var uv = uvs[i];
+            uv = vertices[i];
+        }
+
+        mesh.uv = uvs;
+
         _renderer.material = mat;
         _filter.mesh = mesh;
+        
     }
 }
