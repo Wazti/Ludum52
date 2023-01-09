@@ -25,6 +25,8 @@ namespace CodeBase.Unit
 
         private bool _isBack;
 
+        [SerializeField] private bool isBackSprite = true;
+
         public float Velocity
         {
             get => rigidBody.velocity.x;
@@ -42,7 +44,8 @@ namespace CodeBase.Unit
 
             _distanceLeft += Time.deltaTime * (_isBack ? _speed : -_speed);
 
-            unitAnimator.SetFlip(Velocity > 0);
+
+            unitAnimator.SetFlip(isBackSprite ? Velocity > 0 : Velocity < 0);
 
             if (Math.Abs(_distanceLeft) < 0.05f)
             {

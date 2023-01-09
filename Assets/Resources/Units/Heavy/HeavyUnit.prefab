@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 233673909
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 628326563, guid: 4dd13f9cbe4a6e1439314e5e7301619b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,6 +112,14 @@ PrefabInstance:
       propertyPath: heroStats
       value: 
       objectReference: {fileID: 11400000, guid: 3d86fadfe20a58f44810a26a9845c2e8, type: 2}
+    - target: {fileID: 1890051317484875065, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: isBackSprite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076185686655432354, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4933885177663787190, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
       propertyPath: animator
       value: 
@@ -184,6 +192,30 @@ PrefabInstance:
       propertyPath: _config
       value: 
       objectReference: {fileID: 11400000, guid: 755d777251a946f48bf5ea1d1661eed5, type: 2}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/SFX/SFX_Human_Intake
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -887018194
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1173898325
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -1676273254
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017022317756085394, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -696297364
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f8d7fc1cb014345a4bd5dc844786b2, type: 3}
 --- !u!4 &3599917956843222934 stripped

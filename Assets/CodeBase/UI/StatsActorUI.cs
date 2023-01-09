@@ -15,8 +15,6 @@ namespace CodeBase.UI
 
         [SerializeField] private Dictionary<UnitType, TextMeshProUGUI> texts;
 
-        [SerializeField] private TextMeshProUGUI cowText;
-
 
         private void Awake()
         {
@@ -24,18 +22,11 @@ namespace CodeBase.UI
             {
                 SetText(texts[keys], _progressService.Progress.StatisticsUnits.countUnits[keys]);
             }
-
-            SetCow(_progressService.Progress.StatisticsUnits.CountCows);
         }
 
         private void SetText(TextMeshProUGUI text, int count)
         {
             text.text = count.ToString();
-        }
-
-        private void SetCow(int count)
-        {
-            cowText.text = count.ToString();
         }
     }
 }

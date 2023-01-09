@@ -47,11 +47,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -2128834846
-      Data2: 1228459531
-      Data3: -718826857
-      Data4: 4055094
-    Path: event:/SFX/SFX_Building_Intake
+      Data1: -887018194
+      Data2: 1173898325
+      Data3: -1676273254
+      Data4: -696297364
+    Path: event:/SFX/SFX_Human_Intake
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   - Name: Intake
     Value: 0
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
+  OverrideMinDistance: 0
   OverrideMaxDistance: 20
 --- !u!1 &7807468329944504772
 GameObject:
@@ -211,6 +211,7 @@ MonoBehaviour:
   rigidBody: {fileID: 7807468329944504773}
   distanceToDecision: 3
   statSpeed: {fileID: 11400000, guid: 0e5cd06188f71e946b4c33e125fe15d5, type: 2}
+  isBackSprite: 1
 --- !u!114 &3760287379552058309
 MonoBehaviour:
   m_ObjectHideFlags: 0

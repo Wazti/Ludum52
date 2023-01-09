@@ -2,6 +2,6 @@
 {
     public enum UnitType
     {
-        Thin, Medium, Heavy
+        Thin, Medium, Heavy, Cow
     }
 }

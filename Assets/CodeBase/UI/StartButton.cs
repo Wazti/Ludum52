@@ -10,9 +10,12 @@ namespace CodeBase.UI
         [Inject] private ISceneLoader _sceneLoader;
 
         [Inject] private ICurtainService _curtainService;
+        [Inject] private ILevelSessionService _levelSessionService;
 
         public void StartLevel()
         {
+            _levelSessionService.CopyData();
+            
             _curtainService.DOFade(1, .5f, () =>
             {
                 _sceneLoader.Load("Main", () =>
