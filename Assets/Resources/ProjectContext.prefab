@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coroutineRunner: {fileID: 5047581964173584519, guid: 97e01fe87d4c8c449b20252a5ba85c18, type: 3}
   unitPoolingService: {fileID: 5858386823920526660, guid: d11755c342f234249bef62c41e53c693, type: 3}
+  curtainService: {fileID: 8800444898526008918, guid: ee3900fe9eece4c4584376a0f79294eb, type: 3}
 --- !u!114 &-2317268076607316379
 MonoBehaviour:
   m_ObjectHideFlags: 0

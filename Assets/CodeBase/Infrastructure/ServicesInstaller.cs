@@ -12,6 +12,7 @@ namespace CodeBase.Infrastructure
     {
         [SerializeField] private CoroutineRunner coroutineRunner;
         [SerializeField] private UnitPoolingService unitPoolingService;
+        [SerializeField] private CurtainService curtainService;
 
         public override void InstallBindings()
         {
@@ -23,6 +24,9 @@ namespace CodeBase.Infrastructure
                 .AsSingle()
                 .NonLazy();
             Container.Bind<IUnitPoolingService>().To<UnitPoolingService>().FromComponentInNewPrefab(unitPoolingService)
+                .AsSingle()
+                .NonLazy();
+            Container.Bind<ICurtainService>().To<CurtainService>().FromComponentInNewPrefab(curtainService)
                 .AsSingle()
                 .NonLazy();
             Container.BindInterfacesAndSelfTo<SaveLoadService>().AsSingle().NonLazy();

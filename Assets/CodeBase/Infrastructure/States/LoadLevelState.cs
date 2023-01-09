@@ -26,6 +26,7 @@ namespace CodeBase.Infrastructure.States
         public void Enter(string nameScene)
         {
             _gameFactory.Cleanup();
+            
             _sceneLoader.Load(nameScene, OnLoaded);
         }
 
