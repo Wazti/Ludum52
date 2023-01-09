@@ -764,7 +764,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 233673909
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 659329ab3e531cb40b32fe548dcd564f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -3322,7 +3322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.16282988
+      value: 0.16160765
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -3330,11 +3330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.6737788
+      value: 0.6745363
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99750626
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_RenderShadows
@@ -3525,8 +3525,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3682782253755408015}
   m_Enabled: 1
-  m_SortingLayerID: -402245993
-  m_SortingLayer: 1
+  m_SortingLayerID: 997601525
+  m_SortingLayer: 2
   m_SortingOrder: 1
 --- !u!212 &6763967750969576594
 SpriteRenderer:
@@ -3566,9 +3566,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 233673909
+  m_SortingLayerID: 997601525
   m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 399443698, guid: 64b8185fc09cc6b42b91f2d870467043, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3664,7 +3664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _model: {fileID: 7649023059992457352}
-  _view: {fileID: 0}
   _meshGenerator: {fileID: 2379524063806703061}
   _cast: {fileID: 7649023059992457354}
 --- !u!114 &7649023059992457354

@@ -7,7 +7,6 @@ using UnityEngine;
 public class BeamController : MonoBehaviour
 {
     [SerializeField] private BeamModel _model;
-    [SerializeField] private BeamView _view;
     [SerializeField] private MeshGenerator _meshGenerator;
     [SerializeField] private BeamCast _cast;
     

@@ -18,9 +18,6 @@ public class MeshGenerator : MonoBehaviour {
     {
         var mesh = new Mesh();
 
-        //var lMidBot = new Vector2(lTop.x, lBot.y);
-        //var rMidBot = new Vector2(rTop.x, rBot.y);
-        
         var vertices = new Vector3[6];
 
         var localLTop = transform.InverseTransformPoint(lTop);
@@ -52,14 +49,14 @@ public class MeshGenerator : MonoBehaviour {
         mesh.vertices = vertices;
         mesh.triangles = new int[] {2, 1, 0, 0, 5, 2, 5, 3, 2, 3, 5, 4};
         
-        var uvs = new Vector2[vertices.Length];
+        /*var uvs = new Vector2[vertices.Length];
         for (var i = 0; i < uvs.Length; i++)
         {
             var uv = uvs[i];
             uv = vertices[i];
         }
 
-        mesh.uv = uvs;
+        mesh.uv = uvs;*/
 
         _renderer.material = mat;
         _filter.mesh = mesh;

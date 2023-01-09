@@ -44,6 +44,9 @@ TagManager:
   - name: Env
     uniqueID: 3892721303
     locked: 0
+  - name: Hero
+    uniqueID: 997601525
+    locked: 0
   - name: Units
     uniqueID: 233673909
     locked: 0
