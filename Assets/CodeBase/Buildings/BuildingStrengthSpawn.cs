@@ -6,6 +6,7 @@ namespace CodeBase.Buildings
 {
     public class BuildingStrengthSpawn : MonoBehaviour
     {
+        private const string intakeParameter = "Intake";
         [SerializeField] private float CoolDownToSpawn;
 
         private float _coolDown;
@@ -59,8 +60,10 @@ namespace CodeBase.Buildings
             }
         }
 
-
+        [SerializeField] private FMODUnity.StudioEventEmitter fmodEvent;
         [SerializeField] private BuildingWindows buildingWindows;
+
+        private bool _isActive;
 
         private void FixedUpdate()
         {
@@ -68,10 +71,19 @@ namespace CodeBase.Buildings
 
             if (buildingWindows.IsActive)
             {
+                if (!_isActive)
+                    fmodEvent.Play();
+
+                _isActive = true;
+                fmodEvent.SetParameter(intakeParameter,
+                    (Strength - StrengthRange.y) / (StrengthRange.y - StrengthRange.x));
+
                 Strength += Time.deltaTime * speedStrength;
                 return;
             }
 
+            fmodEvent.Stop();
+            _isActive = false;
             Strength -= Time.deltaTime * speedStrength;
         }
 
