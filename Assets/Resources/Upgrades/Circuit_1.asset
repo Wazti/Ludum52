@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: energy circuit
   Icon: {fileID: 21300000, guid: 7e656fecc0952f043821f536e2508781, type: 3}
   statUpgrade: {fileID: 11400000, guid: 1c851923a165a1349a933fb00be80716, type: 2}
-  statValue: 40
+  statValue: 10
