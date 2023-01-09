@@ -36,7 +36,7 @@ namespace CodeBase.Enemies
         {
             forward = !isBack;
             _reanimator.Flip = isBack;
-            _tween = DOVirtual.DelayedCall(5f, () => { gameObject.SetActive(false); });
+            _tween = DOVirtual.DelayedCall(5f, () => { Destroy(gameObject); });
         }
 
         private void Update()
