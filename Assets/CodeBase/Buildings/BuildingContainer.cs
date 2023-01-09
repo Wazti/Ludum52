@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Unit;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace CodeBase.Buildings
@@ -11,7 +13,7 @@ namespace CodeBase.Buildings
     {
         [MinMaxSlider(1, 50, true)] [SerializeField]
         private Vector2Int rangeUnits;
-
+        
         [SerializeField] private List<UnitType> types;
 
         [SerializeField] private List<UnitType> _generatedUnits = new List<UnitType>();
