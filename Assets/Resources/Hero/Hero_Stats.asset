@@ -23,3 +23,5 @@ MonoBehaviour:
     value: 3
   - statType: {fileID: 11400000, guid: 029ee3d0e90c6004fa5726267938efff, type: 2}
     value: 10000
+  - statType: {fileID: 11400000, guid: c3c59c546f9aea04392763b058100ee0, type: 2}
+    value: 1
