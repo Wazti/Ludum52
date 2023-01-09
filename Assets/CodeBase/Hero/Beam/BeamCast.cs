@@ -11,22 +11,22 @@ public class BeamCast : MonoBehaviour
         var ray = Physics2D.Raycast(startPos, direction, range, mask);
 
         var result = Vector2.zero;
-        
+
         if (ray.collider == null)
         {
             result = startPos + direction * range;
         }
         else
         {
-            result = ray.point;;
+            result = ray.point;
+            ;
         }
-        
+
         Debug.DrawLine(startPos, result, color);
-        Debug.Log(result);
 
         return result;
     }
-    
+
     public Vector2 GetDirectionVector2D(float angle)
     {
         return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
