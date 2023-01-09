@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46082581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.378, y: 0.288, z: 0}
+  m_LocalPosition: {x: 0.384, y: 0.288, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128524816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.386, y: 0.27, z: 0}
+  m_LocalPosition: {x: -0.399, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 8548013957261867910}
   - component: {fileID: 530457949304731931}
   - component: {fileID: 8843947685206793078}
+  - component: {fileID: 8663520162329702512}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -174,6 +175,13 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+  fmodEvent:
+    Guid:
+      Data1: 327523528
+      Data2: 1156241717
+      Data3: -1769655368
+      Data4: -11232121
+    Path: event:/SFX/Missile/SFX_Missle_Fire
   CoolDown: 3
   bullet: {fileID: 1061421448121197644, guid: 136ff7a5e1b22a8458b9522cdce66680, type: 3}
   pointLeftToShoot: {fileID: 1128524817}
@@ -192,6 +200,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6003176083718366101}
+--- !u!114 &8663520162329702512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257428326904563515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca6e5c49f024f96a44da795bb74dcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMove: {fileID: 8548013957261867910}
+  enemyShoot: {fileID: 530457949304731931}
+  animator: {fileID: 8843947685206793078}
+  typeSpawn: 0
+  rigidBody: {fileID: 7257428326904563514}
+  collider2d: {fileID: 7257428326904563494}
 --- !u!1001 &3276954759056278536
 PrefabInstance:
   m_ObjectHideFlags: 0

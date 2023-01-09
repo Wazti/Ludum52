@@ -1,6 +1,7 @@
 ﻿using System;
 using Aarthificial.Reanimation;
 using CodeBase.Logic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -10,10 +11,14 @@ namespace CodeBase.Enemies
     {
         [SerializeField] private Reanimator _reanimator;
 
+        [SerializeField] private FMODUnity.EventReference fmodEvent;
+
         public int damage = 1;
 
-        private bool _stop;
+        public int speed;
 
+        private bool _stop;
+        private Tween _tween;
         public bool forward = true;
 
         private void Awake()
@@ -26,23 +31,28 @@ namespace CodeBase.Enemies
             gameObject.SetActive(false);
         }
 
-        public void Flip(bool flip)
+
+        public void Flip(bool isBack)
         {
-            forward = !flip;
-            _reanimator.Flip = flip ;
+            forward = !isBack;
+            _reanimator.Flip = isBack;
+            _tween = DOVirtual.DelayedCall(5f, () => { gameObject.SetActive(false); });
         }
+
         private void Update()
         {
             if (_stop) return;
 
             Vector3 direction = new Vector3(forward ? 1f : -1f, 1f, 0f).normalized;
 
-            transform.Translate(direction * Time.deltaTime * 3f);
+            transform.Translate(direction * Time.deltaTime * speed);
         }
 
         public void Explodes()
         {
+            _tween?.Kill();
             _stop = true;
+            FMODUnity.RuntimeManager.PlayOneShot(fmodEvent, transform.position);
             _reanimator.Set(AnimatorDrivers.State, 1);
         }
     }

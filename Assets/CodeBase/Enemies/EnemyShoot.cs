@@ -18,6 +18,7 @@ namespace CodeBase.Enemies
 
         [SerializeField] private LayerMask _layerMask;
 
+        [SerializeField] private FMODUnity.EventReference fmodEvent;
         public float CoolDown;
 
         [SerializeField] private Bullet bullet;
@@ -41,7 +42,7 @@ namespace CodeBase.Enemies
             var _bullet = Instantiate(bullet,
                 _isBack ? pointLeftToShoot.position : pointRightToShoot.position,
                 Quaternion.identity);
-            bullet.Flip(_isBack);
+            _bullet.Flip(_isBack);
             StartCoroutine(EnableMovement());
         }
 
@@ -63,8 +64,9 @@ namespace CodeBase.Enemies
 
         private void CheckInRange()
         {
+            _isBack = enemyAnimator.animator.Renderer.flipX;
             Physics2D.OverlapBoxNonAlloc(transform.position, rangeToShoot,
-                enemyAnimator.animator.Renderer.flipX ? angle : -angle, _hits, _layerMask);
+                _isBack ? angle : -angle, _hits, _layerMask);
 
             var hero = _hits.FirstOrDefault();
 
@@ -78,7 +80,7 @@ namespace CodeBase.Enemies
 
         private void Shoot()
         {
-            _isBack = enemyMove._isBack;
+            FMODUnity.RuntimeManager.PlayOneShot(fmodEvent, transform.position);
             _coolDown = CoolDown;
             enemyAnimator.Shoot();
         }

@@ -142,5 +142,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reanimator: {fileID: 6206381698696510108}
+  fmodEvent:
+    Guid:
+      Data1: 530927177
+      Data2: 1248815965
+      Data3: -978266212
+      Data4: 134761689
+    Path: event:/SFX/Missile/SFX_Explosion_Missile_Hit
   damage: 1
+  speed: 6
   forward: 0
