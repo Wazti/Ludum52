@@ -6,7 +6,7 @@ public class MeshGenerator : MonoBehaviour {
 
     public Material mat;
     
-    private const float z = 0; //v
+    [SerializeField] private float z = 0; //v
     
     float width = 1;
     float height = 1;

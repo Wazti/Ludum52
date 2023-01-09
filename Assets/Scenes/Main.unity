@@ -3318,19 +3318,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 4.21875
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832758, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_RenderShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_Cameras.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
       propertyPath: m_Cameras.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285000413288832759, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
+      propertyPath: m_RequiresOpaqueTextureOption
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2285000413288832756, guid: 2f092266a5b2ba046a41304b2b1bb7f8, type: 3}
@@ -3434,6 +3446,7 @@ GameObject:
   - component: {fileID: 5899530690881597615}
   - component: {fileID: 3764452259694169708}
   - component: {fileID: 2379524063806703061}
+  - component: {fileID: 5899530690881597616}
   m_Layer: 13
   m_Name: MeshGenerator
   m_TagString: Untagged
@@ -3491,6 +3504,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!210 &5899530690881597616
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682782253755408015}
+  m_Enabled: 1
+  m_SortingLayerID: -402245993
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!212 &6763967750969576594
 SpriteRenderer:
   m_ObjectHideFlags: 0
