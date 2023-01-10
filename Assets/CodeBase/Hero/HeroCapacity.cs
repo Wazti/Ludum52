@@ -27,6 +27,7 @@ namespace CodeBase.Hero
         public void AddUnit(IUnitIntakes unitIntakes)
         {
             var unit = new UnitInfo(unitIntakes.Mass, unitIntakes.UnitType);
+            
             _currentUnits.Add(unit);
             _levelSessionService.AddUnit(unit);
             _unitPoolingService.DespawnUnit(unitIntakes.GameObject.GetComponent<BaseUnit>());
