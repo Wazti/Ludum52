@@ -55,7 +55,7 @@ namespace CodeBase.Logic
 
             _blackScreen.DOFade(1, 1).SetDelay(0.5f).OnComplete(() =>
             {
-                text.text = "Oh, you loose. Your harvest - 0 humans";
+                text.text = "Oh, you loose. \n Your harvest - 0 humans";
                 text.gameObject.SetActive(true);
             });
 
