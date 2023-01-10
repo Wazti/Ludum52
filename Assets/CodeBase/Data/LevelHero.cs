@@ -5,8 +5,8 @@ namespace CodeBase.Data
     [Serializable]
     public class LevelHero
     {
-        public const double modifier = 0.1;
-        public const float startXP = 15000;
+        public const double modifier = 0.35;
+        public const float startXP = 3500;
 
         public int CurrentLevel;
 

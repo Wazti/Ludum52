@@ -9,6 +9,8 @@ namespace CodeBase.Services.PersistentProgress
         public PersistentProgressService()
         {
             Progress = new PlayerProgress("");
+            FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
+            FMODUnity.RuntimeManager.CoreSystem.mixerResume();
         }
     }
 }

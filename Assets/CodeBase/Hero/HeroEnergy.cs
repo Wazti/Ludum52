@@ -41,23 +41,8 @@ namespace CodeBase.Hero
         {
             MaxEnergy = heroStats.StatsSystem.GetStat(maxEnergy).Value;
             Energy.Value = MaxEnergy;
-            DOVirtual.DelayedCall(0.5f, () => { heroHealth.OnHealthChange += OnHealthChange; }, false);
         }
-
-        private void OnHealthChange(int arg1, int arg2)
-        {
-            if (_isOutEnergy) return;
-
-            if (arg1 > 0) return;
-
-            _isOutEnergy = true;
-
-
-            _levelService.LoseLevel();
-
-            _curtainService.DOFade(1, 1f,
-                () => { _sceneLoader.Load("Home", () => { _curtainService.DOFade(0, .5f, () => { }); }); });
-        }
+        
 
         private void FixedUpdate()
         {
@@ -79,11 +64,6 @@ namespace CodeBase.Hero
 
             heroMovement.enabled = false;
             _rigidbody.gravityScale = 1;
-
-            _levelService.LoseLevel();
-
-            _curtainService.DOFade(1, 1f,
-                () => { _sceneLoader.Load("Home", () => { _curtainService.DOFade(0, .5f, () => { }); }); });
         }
 
         public void DecreaseEnergy(float energy)
